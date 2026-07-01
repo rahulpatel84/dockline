@@ -1,0 +1,13 @@
+{
+  "name": "Dockline",
+  "shortName": "Dockline",
+  "tagline": "Tampa Bay's Dock & Seawall Guide",
+  "baseUrl": "https://dockline.example.com",
+  "description": "Honest, local guides on permits, costs, and materials for Tampa Bay waterfront owners — then we connect you with licensed dock & seawall builders when you're ready.",
+  "locale": "en_US",
+  "twitter": "@dockline",
+  "areaServed": ["Tampa", "Hillsborough County", "Pinellas County", "St. Petersburg", "Clearwater", "Apollo Beach"],
+  "founded": "2026",
+  "logo": "/logo.png",
+  "ogImage": "/og.png"
+}

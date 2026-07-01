@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dockline — Tampa Bay's Dock &amp; Seawall Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ocean:#0c3b46;
+    --ocean-2:#0e4d5c;
+    --teal:#15808f;
+    --aqua:#6fc5bc;
+    --aqua-soft:#bfe7e0;
+    --sand:#faf5ec;
+    --sand-2:#f1e8d7;
+    --coral:#f2683c;
+    --coral-dk:#d9512a;
+    --gold:#e8a33d;
+    --ink:#102329;
+    --ink-soft:#3f565c;
+    --line:#e3dccd;
+    --white:#ffffff;
+    --shadow: 0 18px 40px -22px rgba(12,59,70,.45);
+    --shadow-sm: 0 8px 22px -14px rgba(12,59,70,.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hanken Grotesk",sans-serif;
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Fraunces",serif;line-height:1.08;font-weight:600;letter-spacing:-.01em;}
+  a{text-decoration:none;color:inherit;cursor:pointer;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .view{display:none;animation:fade .5s ease both;}
+  .view.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,245,236,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;gap:28px;height:72px;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:900;font-size:1.4rem;color:var(--ocean);letter-spacing:-.02em;}
+  .logo .dot{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--teal),var(--ocean));display:grid;place-items:center;}
+  .logo .dot svg{width:18px;height:18px;}
+  .logo small{display:block;font-family:"Hanken Grotesk";font-weight:600;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:-4px;}
+  nav.links{display:flex;gap:26px;margin-left:auto;align-items:center;}
+  nav.links a{font-weight:600;font-size:.95rem;color:var(--ink-soft);padding:6px 2px;border-bottom:2px solid transparent;transition:.2s;}
+  nav.links a:hover{color:var(--ocean);}
+  nav.links a.on{color:var(--ocean);border-color:var(--coral);}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;border-radius:999px;padding:11px 22px;border:0;cursor:pointer;transition:.22s;font-family:"Hanken Grotesk";}
+  .btn-coral{background:var(--coral);color:#fff;box-shadow:0 10px 22px -10px rgba(242,104,60,.7);}
+  .btn-coral:hover{background:var(--coral-dk);transform:translateY(-2px);}
+  .btn-ocean{background:var(--ocean);color:#fff;}
+  .btn-ocean:hover{background:#0a2e37;transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--ocean);border:1.5px solid var(--ocean);}
+  .btn-ghost:hover{background:var(--ocean);color:#fff;}
+  .btn-light{background:#fff;color:var(--ocean);}
+  .btn-light:hover{transform:translateY(-2px);}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:linear-gradient(165deg,var(--ocean) 0%,var(--ocean-2) 55%,#0a6b78 130%);color:#fff;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2;padding:78px 28px 150px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua);background:rgba(111,197,188,.12);border:1px solid rgba(111,197,188,.3);padding:6px 14px;border-radius:999px;margin-bottom:22px;}
+  .hero h1{font-size:3.5rem;font-weight:600;margin-bottom:18px;}
+  .hero h1 em{font-style:italic;color:var(--aqua);font-weight:500;}
+  .hero p.lede{font-size:1.18rem;color:#d4e6e6;max-width:520px;margin-bottom:30px;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-stats{display:flex;gap:30px;margin-top:42px;}
+  .hero-stats .s b{font-family:"Fraunces";font-size:1.8rem;color:#fff;display:block;}
+  .hero-stats .s span{font-size:.82rem;color:#9fc3c4;}
+  .hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px;backdrop-filter:blur(4px);}
+  .hero-card h4{font-size:1.05rem;color:#fff;margin-bottom:6px;}
+  .hero-card p{font-size:.86rem;color:#bcd6d6;margin-bottom:18px;}
+  .mini-form{display:flex;gap:8px;background:#fff;border-radius:12px;padding:7px;}
+  .mini-form input{flex:1;border:0;outline:0;padding:9px 12px;font-family:"Hanken Grotesk";font-size:.92rem;color:var(--ink);}
+  .mini-form .btn{padding:10px 16px;font-size:.85rem;}
+  .trustline{font-size:.74rem;color:#9fc3c4;margin-top:12px;display:flex;align-items:center;gap:7px;}
+  .hero-wave{position:absolute;bottom:-2px;left:0;width:100%;z-index:1;}
+
+  /* ---------- SECTION BASICS ---------- */
+  section.block{padding:74px 0;}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 48px;}
+  .sec-head .kick{font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+  .sec-head h2{font-size:2.5rem;color:var(--ocean);margin-bottom:14px;}
+  .sec-head p{font-size:1.08rem;color:var(--ink-soft);}
+
+  /* ---------- FUNNEL ---------- */
+  .funnel{background:var(--sand-2);}
+  .funnel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .stage{background:#fff;border-radius:20px;padding:30px 26px;border:1px solid var(--line);position:relative;transition:.28s;overflow:hidden;}
+  .stage:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .stage .tag{position:absolute;top:0;right:0;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:6px 14px;border-radius:0 20px 0 14px;}
+  .stage.s1 .tag{background:var(--teal);}
+  .stage.s2 .tag{background:var(--gold);}
+  .stage.s3 .tag{background:var(--coral);}
+  .stage .num{font-family:"Fraunces";font-size:.9rem;font-weight:700;color:var(--aqua);}
+  .stage.s2 .num{color:var(--gold);}
+  .stage.s3 .num{color:var(--coral);}
+  .stage h3{font-size:1.5rem;color:var(--ocean);margin:6px 0 4px;}
+  .stage .mood{font-size:.92rem;color:var(--ink-soft);font-style:italic;margin-bottom:18px;}
+  .stage ul{list-style:none;margin-bottom:22px;}
+  .stage ul li{font-size:.9rem;padding:7px 0 7px 24px;position:relative;color:var(--ink);border-bottom:1px dashed var(--line);}
+  .stage ul li:last-child{border:0;}
+  .stage ul li::before{content:"";position:absolute;left:2px;top:14px;width:8px;height:8px;border-radius:50%;background:var(--aqua);}
+  .stage.s2 ul li::before{background:var(--gold);}
+  .stage.s3 ul li::before{background:var(--coral);}
+  .stage .stagebtn{width:100%;justify-content:center;}
+  .flowline{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:34px;color:var(--ink-soft);font-size:.86rem;font-weight:600;}
+  .flowline span{display:flex;align-items:center;gap:10px;}
+  .flowline .arr{color:var(--coral);font-size:1.1rem;}
+
+  /* ---------- ARTICLE CARDS ---------- */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .post{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);transition:.26s;cursor:pointer;display:flex;flex-direction:column;}
+  .post:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .post .thumb{height:168px;position:relative;display:grid;place-items:center;overflow:hidden;}
+  .post .thumb svg{width:100%;height:100%;}
+  .post .body{padding:22px;flex:1;display:flex;flex-direction:column;}
+  .pill{font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;display:inline-block;margin-bottom:12px;align-self:flex-start;}
+  .pill.aware{background:#dff0ee;color:#0d6b6b;}
+  .pill.consider{background:#fbeccd;color:#9a6b14;}
+  .pill.decide{background:#fde0d6;color:#b9421f;}
+  .post h3{font-size:1.2rem;color:var(--ocean);margin-bottom:8px;}
+  .post p{font-size:.9rem;color:var(--ink-soft);flex:1;}
+  .post .meta{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:.78rem;color:var(--teal);font-weight:600;}
+
+  /* ---------- CATEGORY GRID ---------- */
+  .cats{background:var(--ocean);color:#fff;}
+  .cats .sec-head h2{color:#fff;}
+  .cats .sec-head p{color:#bcd6d6;}
+  .cats .sec-head .kick{color:var(--aqua);}
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .cat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;transition:.24s;cursor:pointer;}
+  .cat:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);}
+  .cat .ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--aqua));display:grid;place-items:center;margin-bottom:16px;}
+  .cat .ic svg{width:24px;height:24px;}
+  .cat h4{font-size:1.18rem;margin-bottom:6px;color:#fff;}
+  .cat p{font-size:.86rem;color:#bcd6d6;}
+  .cat .count{font-size:.76rem;color:var(--aqua);font-weight:700;margin-top:12px;display:block;}
+
+  /* ---------- LEAD MAGNET ---------- */
+  .magnet{background:linear-gradient(135deg,var(--coral) 0%,var(--gold) 130%);border-radius:26px;padding:50px;color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;overflow:hidden;}
+  .magnet h2{font-size:2.1rem;margin-bottom:12px;color:#fff;}
+  .magnet p{font-size:1.05rem;color:#fff6f1;margin-bottom:0;max-width:430px;}
+  .magnet .form-card{background:#fff;border-radius:18px;padding:26px;color:var(--ink);box-shadow:var(--shadow);}
+  .magnet .form-card label{font-size:.82rem;font-weight:700;color:var(--ocean);display:block;margin-bottom:6px;}
+  .field{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;font-family:"Hanken Grotesk";font-size:.95rem;margin-bottom:14px;outline:0;transition:.2s;}
+  .field:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(21,128,143,.12);}
+  .magnet .badge{position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.12);right:-60px;top:-60px;}
+
+  /* ---------- DIRECTORY ---------- */
+  .dir-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .builder{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;gap:18px;transition:.24s;}
+  .builder:hover{box-shadow:var(--shadow);transform:translateY(-4px);}
+  .builder .avatar{flex:0 0 64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--ocean),var(--teal));display:grid;place-items:center;color:#fff;font-family:"Fraunces";font-weight:700;font-size:1.5rem;}
+  .builder .info{flex:1;}
+  .builder .info h3{font-size:1.2rem;color:var(--ocean);margin-bottom:2px;display:flex;align-items:center;gap:8px;}
+  .verified{font-size:.62rem;font-weight:800;letter-spacing:.06em;background:#dff0ee;color:#0d6b6b;padding:3px 8px;border-radius:6px;text-transform:uppercase;}
+  .builder .loc{font-size:.84rem;color:var(--ink-soft);margin-bottom:8px;}
+  .stars{color:var(--gold);font-size:.95rem;letter-spacing:1px;}
+  .builder .tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px;}
+  .builder .tags span{font-size:.72rem;background:var(--sand-2);color:var(--ink-soft);padding:4px 10px;border-radius:999px;font-weight:600;}
+  .feat{border:2px solid var(--gold);position:relative;}
+  .feat::before{content:"★ Featured";position:absolute;top:-11px;left:20px;background:var(--gold);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:7px;text-transform:uppercase;}
+
+  /* ---------- ARTICLE PAGE ---------- */
+  .article{max-width:760px;margin:0 auto;padding:54px 28px 30px;}
+  .crumbs{font-size:.82rem;color:var(--teal);font-weight:600;margin-bottom:18px;}
+  .crumbs a:hover{text-decoration:underline;}
+  .article h1{font-size:2.7rem;color:var(--ocean);margin:10px 0 18px;}
+  .art-meta{display:flex;align-items:center;gap:14px;padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:30px;color:var(--ink-soft);font-size:.88rem;}
+  .art-meta .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));display:grid;place-items:center;color:#fff;font-weight:700;}
+  .article p{font-size:1.08rem;color:#243b40;margin-bottom:20px;}
+  .article h2{font-size:1.7rem;color:var(--ocean);margin:36px 0 14px;}
+  .article h3{font-size:1.25rem;color:var(--ocean);margin:26px 0 10px;}
+  .article ul{margin:0 0 22px 22px;}
+  .article ul li{margin-bottom:9px;font-size:1.05rem;color:#243b40;}
+  .keyfact{background:#fff;border-left:4px solid var(--teal);border-radius:0 14px 14px 0;padding:18px 22px;margin:26px 0;box-shadow:var(--shadow-sm);}
+  .keyfact b{color:var(--ocean);}
+  .inline-cta{background:linear-gradient(135deg,#0e4d5c,#0a6b78);color:#fff;border-radius:18px;padding:28px;margin:34px 0;}
+  .inline-cta.soft{background:var(--sand-2);color:var(--ink);border:1px dashed var(--gold);}
+  .inline-cta h4{font-size:1.3rem;color:#fff;margin-bottom:6px;}
+  .inline-cta.soft h4{color:var(--ocean);}
+  .inline-cta p{color:#cfe3e3;font-size:.96rem;margin-bottom:16px;}
+  .inline-cta.soft p{color:var(--ink-soft);}
+  .costtable{width:100%;border-collapse:collapse;margin:22px 0;font-size:.98rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);}
+  .costtable th{background:var(--ocean);color:#fff;text-align:left;padding:12px 16px;font-family:"Hanken Grotesk";font-weight:700;font-size:.9rem;}
+  .costtable td{padding:12px 16px;border-bottom:1px solid var(--line);}
+  .costtable tr:last-child td{border:0;}
+  .costtable td b{color:var(--teal);}
+
+  /* ---------- QUOTE FORM PAGE ---------- */
+  .quote-hero{background:linear-gradient(165deg,var(--ocean),#0a6b78);color:#fff;padding:60px 0 90px;text-align:center;}
+  .quote-hero h1{font-size:2.8rem;margin-bottom:14px;}
+  .quote-hero p{font-size:1.15rem;color:#cfe3e3;max-width:540px;margin:0 auto;}
+  .quote-card{max-width:680px;margin:-60px auto 0;background:#fff;border-radius:22px;padding:38px;box-shadow:var(--shadow);position:relative;z-index:3;}
+  .steps{display:flex;gap:8px;margin-bottom:28px;}
+  .steps .st{flex:1;text-align:center;font-size:.74rem;font-weight:700;color:var(--ink-soft);padding-bottom:10px;border-bottom:3px solid var(--line);text-transform:uppercase;letter-spacing:.06em;}
+  .steps .st.on{color:var(--teal);border-color:var(--teal);}
+  .qrow{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+  .choice{border:1.5px solid var(--line);border-radius:12px;padding:16px 10px;text-align:center;cursor:pointer;transition:.2s;font-weight:600;font-size:.86rem;color:var(--ink-soft);}
+  .choice:hover,.choice.sel{border-color:var(--teal);background:#f1faf8;color:var(--ocean);}
+  .choice .ci{font-size:1.5rem;display:block;margin-bottom:6px;}
+  .formlabel{font-size:.84rem;font-weight:700;color:var(--ocean);display:block;margin:0 0 6px;}
+  .privacy{font-size:.76rem;color:var(--ink-soft);margin-top:14px;display:flex;gap:8px;align-items:flex-start;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ocean);color:#bcd6d6;padding:56px 0 30px;}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+  footer h5{font-family:"Hanken Grotesk";color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+  footer a{display:block;font-size:.9rem;color:#9fc3c4;margin-bottom:10px;transition:.2s;}
+  footer a:hover{color:#fff;}
+  footer .logo{color:#fff;margin-bottom:14px;}
+  footer .blurb{font-size:.9rem;color:#9fc3c4;max-width:280px;}
+  .foot-bot{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;font-size:.8rem;color:#7ba3a4;flex-wrap:wrap;gap:10px;}
+
+  .note{background:#fff;border:1px dashed var(--teal);border-radius:12px;padding:12px 16px;font-size:.82rem;color:var(--ink-soft);margin-top:14px;}
+
+  @media(max-width:900px){
+    .hero-grid,.magnet{grid-template-columns:1fr;}
+    .funnel-grid,.card-grid,.cat-grid,.dir-grid,.qrow,.foot-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.5rem;}
+    nav.links{display:none;}
+    .flowline{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" onclick="show('home')">
+      <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 18h18M5 18v-7l7-4 7 4v7M9 18v-4h6v4"/></svg></span>
+      <span>Dockline<small>Tampa Bay</small></span>
+    </a>
+    <nav class="links">
+      <a data-nav="home" class="on" onclick="show('home')">Home</a>
+      <a data-nav="guides" onclick="show('guides')">Guides</a>
+      <a data-nav="article" onclick="show('article')">Costs &amp; Permits</a>
+      <a data-nav="directory" onclick="show('directory')">Find a Builder</a>
+      <button class="btn btn-coral" onclick="show('quote')">Get Free Quotes</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<div class="view active" id="home">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">● Tampa · Hillsborough · Pinellas</span>
+          <h1>Planning a dock?<br>Start in the <em>shallows.</em></h1>
+          <p class="lede">Honest, local guides on permits, costs, and materials for Tampa Bay waterfront owners — then we connect you with licensed dock &amp; seawall builders when you're ready.</p>
+          <div class="hero-cta">
+            <button class="btn btn-light" onclick="show('guides')">Read the Guides →</button>
+            <button class="btn btn-coral" onclick="show('quote')">Get 3 Free Quotes</button>
+          </div>
+          <div class="hero-stats">
+            <div class="s"><b>40+</b><span>Local guides &amp; checklists</span></div>
+            <div class="s"><b>$15k</b><span>Avg. Tampa dock cost</span></div>
+            <div class="s"><b>4</b><span>Permitting agencies decoded</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h4>Free Tampa Dock Planning Kit</h4>
+          <p>Permit checklist + cost worksheet + 12 questions to ask any builder. Sent instantly.</p>
+          <div class="mini-form">
+            <input type="email" placeholder="you@email.com">
+            <button class="btn btn-coral">Send it</button>
+          </div>
+          <div class="trustline">🔒 No spam. Just the waterfront essentials.</div>
+        </div>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,16 720,52 C960,88 1200,28 1440,60 L1440,120 L0,120 Z" fill="#faf5ec"/></svg>
+  </section>
+
+  <!-- FUNNEL -->
+  <section class="block funnel">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">However you found us</div>
+        <h2>Wherever you are, we meet you there</h2>
+        <p>Most people don't start ready to build — they start with a question. Find your stage and we'll point you to exactly what helps next.</p>
+      </div>
+      <div class="funnel-grid">
+        <div class="stage s1">
+          <span class="tag">Awareness</span>
+          <span class="num">Stage 01</span>
+          <h3>Just exploring</h3>
+          <p class="mood">"Do I even need a permit? How much is this going to cost me?"</p>
+          <ul>
+            <li>Permit &amp; regulation basics</li>
+            <li>Ballpark cost ranges</li>
+            <li>Dock vs. seawall vs. lift</li>
+          </ul>
+          <button class="btn btn-ghost stagebtn" onclick="show('guides')">Browse free guides</button>
+        </div>
+        <div class="stage s2">
+          <span class="tag">Consideration</span>
+          <span class="num">Stage 02</span>
+          <h3>Weighing options</h3>
+          <p class="mood">"Floating or fixed? Composite or wood? What should it really cost in Tampa?"</p>
+          <ul>
+            <li>Material &amp; design comparisons</li>
+            <li>Detailed cost breakdowns</li>
+            <li>Questions to ask a builder</li>
+          </ul>
+          <button class="btn btn-ghost stagebtn" onclick="show('article')">Compare &amp; estimate</button>
+        </div>
+        <div class="stage s3">
+          <span class="tag">Decision</span>
+          <span class="num">Stage 03</span>
+          <h3>Ready to build</h3>
+          <p class="mood">"I know what I want — connect me with someone trustworthy and licensed."</p>
+          <ul>
+            <li>Vetted local builder directory</li>
+            <li>Up to 3 free matched quotes</li>
+            <li>Licensed &amp; insured only</li>
+          </ul>
+          <button class="btn btn-coral stagebtn" onclick="show('quote')">Get matched now</button>
+        </div>
+      </div>
+      <div class="flowline">
+        <span>📖 Learn</span><span class="arr">→</span>
+        <span>⚖️ Compare</span><span class="arr">→</span>
+        <span>🤝 Connect with a builder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLES -->
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">Start here</div>
+        <h2>The guides Tampa owners read first</h2>
+        <p>Plain-English answers to the questions everyone asks before building a dock.</p>
+      </div>
+      <div class="card-grid" id="featured"></div>
+      <div style="text-align:center;margin-top:38px;">
+        <button class="btn btn-ocean" onclick="show('guides')">See all guides →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="block cats">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">Browse by topic</div>
+        <h2>Find your answer faster</h2>
+        <p>Every guide is organized around a real decision you'll face on the water.</p>
+      </div>
+      <div class="cat-grid" id="cats"></div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section class="block">
+    <div class="wrap">
+      <div class="magnet">
+        <div class="badge"></div>
+        <div>
+          <h2>Get the free Dock Planning Kit</h2>
+          <p>The permit checklist, a cost worksheet, and the 12 questions that separate great builders from cheap ones. Used by 1,000+ Tampa Bay homeowners.</p>
+        </div>
+        <div class="form-card">
+          <label>First name</label>
+          <input class="field" placeholder="Jordan">
+          <label>Email</label>
+          <input class="field" placeholder="you@email.com">
+          <button class="btn btn-coral" style="width:100%;justify-content:center;">Email me the kit →</button>
+          <div class="note">📥 This is your awareness-stage lead capture — soft ask, high value, builds your list.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTORY TEASER -->
+  <section class="block funnel">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">When you're ready</div>
+        <h2>Meet the builders</h2>
+        <p>Licensed, insured, and reviewed marine contractors serving Tampa Bay.</p>
+      </div>
+      <div class="dir-grid" id="dirteaser"></div>
+      <div style="text-align:center;margin-top:36px;">
+        <button class="btn btn-ocean" onclick="show('directory')">Browse the full directory →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GUIDES INDEX ============ -->
+<div class="view" id="guides">
+  <section class="hero" style="padding-bottom:0;">
+    <div class="wrap" style="padding:56px 28px 90px;">
+      <span class="eyebrow">The Dockline Guides</span>
+      <h1 style="font-size:2.8rem;">Everything before you build</h1>
+      <p class="lede">Permits, costs, materials, lifespan, hiring — the awareness library that does the ranking and the teaching.</p>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,16 720,52 C960,88 1200,28 1440,60 L1440,120 L0,120 Z" fill="#faf5ec"/></svg>
+  </section>
+  <section class="block" style="padding-top:48px;">
+    <div class="wrap">
+      <div id="filterbar" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;"></div>
+      <div class="card-grid" id="allposts"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ARTICLE ============ -->
+<div class="view" id="article">
+  <article class="article">
+    <div class="crumbs"><a onclick="show('home')">Home</a> &nbsp;›&nbsp; <a onclick="show('guides')">Guides</a> &nbsp;›&nbsp; Permits &amp; Regulations</div>
+    <span class="pill aware">Awareness · Permits</span>
+    <h1>Do I Need a Permit to Build a Dock in Tampa Bay?</h1>
+    <div class="art-meta">
+      <div class="av">DL</div>
+      <div>By the Dockline Team · Updated 2026 · 7 min read</div>
+    </div>
+
+    <p>Short answer: <b>almost always, yes</b> — and in Florida it's usually more than one permit. Before a single piling goes in the water, a Tampa Bay dock can touch several agencies at once. The good news is that the process is very navigable once you know who's involved. Here's the plain-English version.</p>
+
+    <h2>Who regulates docks in the Tampa area?</h2>
+    <p>Waterfront construction in Florida is reviewed to protect waterways, marine life, and navigation, so a few different bodies may weigh in depending on your location and project size:</p>
+    <ul>
+      <li><b>Florida DEP</b> — oversees work in and near sovereign submerged lands and shoreline modifications.</li>
+      <li><b>U.S. Army Corps of Engineers</b> — federal review for navigable waters.</li>
+      <li><b>Your local building department</b> — City of Tampa, Hillsborough, or Pinellas, depending on address.</li>
+      <li><b>County environmental protection</b> (e.g. Hillsborough EPC) and, in some areas, the port authority.</li>
+    </ul>
+
+    <div class="keyfact">
+      <b>Reality check:</b> Some small docks may qualify for state permitting exemptions if they meet specific size and impact criteria — but local and county rules still apply. State approval alone doesn't mean you're cleared to build.
+    </div>
+
+    <!-- SOFT inline CTA = awareness lead capture -->
+    <div class="inline-cta soft">
+      <h4>📋 Not sure which permits apply to your lot?</h4>
+      <p>Grab our free Tampa Permit Checklist — it walks you agency-by-agency so nothing gets missed.</p>
+      <div class="mini-form" style="max-width:420px;">
+        <input type="email" placeholder="you@email.com">
+        <button class="btn btn-coral">Send checklist</button>
+      </div>
+    </div>
+
+    <h2>What about my HOA?</h2>
+    <p>This trips up more homeowners than the government does. Even when the county signs off, your HOA may restrict dock width, height, lighting, materials, or distance from property lines — and they can stop a build mid-project. Always review your covenants <i>before</i> materials arrive on site.</p>
+
+    <h2>How long does permitting take?</h2>
+    <p>Permitting is frequently the <b>longest phase</b> of the whole project — often far longer than the actual construction. Planning ahead of peak season helps you avoid the queue when every waterfront owner files at once.</p>
+
+    <h3>Common mistakes to avoid</h3>
+    <ul>
+      <li>Assuming the contractor's quote includes permit and survey fees (often it doesn't).</li>
+      <li>Skipping the HOA review.</li>
+      <li>Building near seagrass beds or protected areas without the right approvals.</li>
+    </ul>
+
+    <!-- HARD inline CTA = decision lead -->
+    <div class="inline-cta">
+      <h4>Want a builder to handle the paperwork?</h4>
+      <p>Most established Tampa marine contractors pull permits for you. Get up to 3 free quotes from licensed builders who manage the whole process.</p>
+      <button class="btn btn-coral" onclick="show('quote')">Get my free quotes →</button>
+    </div>
+
+    <h2>The bottom line</h2>
+    <p>Yes, you almost certainly need a permit — usually a few. But none of it is a dealbreaker. Understand the agencies, check your HOA early, budget time for review, and lean on a licensed builder who's done it dozens of times. That's how a dock gets built without regrets.</p>
+
+    <p style="font-size:.84rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:18px;margin-top:30px;">This guide is general information, not legal advice. Permit requirements vary by municipality — always confirm with your local building department.</p>
+  </article>
+
+  <section class="block" style="background:var(--sand-2);">
+    <div class="wrap">
+      <div class="sec-head"><div class="kick">Keep reading</div><h2>Related guides</h2></div>
+      <div class="card-grid" id="related"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ DIRECTORY ============ -->
+<div class="view" id="directory">
+  <section class="hero" style="padding-bottom:0;">
+    <div class="wrap" style="padding:56px 28px 90px;">
+      <span class="eyebrow">Verified Marine Contractors</span>
+      <h1 style="font-size:2.8rem;">Find a Tampa Bay dock builder</h1>
+      <p class="lede">Every builder here is licensed, insured, and reviewed. Reach out directly — or let us match you to the best fit.</p>
+      <div class="hero-cta" style="margin-top:24px;">
+        <button class="btn btn-coral" onclick="show('quote')">Get matched to 3 builders →</button>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,16 720,52 C960,88 1200,28 1440,60 L1440,120 L0,120 Z" fill="#faf5ec"/></svg>
+  </section>
+  <section class="block" style="padding-top:48px;">
+    <div class="wrap">
+      <div class="dir-grid" id="fulldir"></div>
+      <div class="note" style="max-width:680px;margin:34px auto 0;text-align:center;">💰 The directory is your recurring-revenue layer: builders pay monthly to be listed and extra to be ★ Featured.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ QUOTE / LEAD FORM ============ -->
+<div class="view" id="quote">
+  <section class="quote-hero">
+    <div class="wrap">
+      <h1>Get 3 free dock quotes</h1>
+      <p>Tell us about your project. We'll match you with up to three licensed Tampa Bay builders — no obligation, no pressure.</p>
+    </div>
+  </section>
+  <div class="quote-card">
+    <div class="steps">
+      <div class="st on">1 · Project</div>
+      <div class="st on">2 · Location</div>
+      <div class="st">3 · Contact</div>
+    </div>
+
+    <label class="formlabel">What do you need built?</label>
+    <div class="choice-grid">
+      <div class="choice sel" onclick="pick(this)"><span class="ci">🛶</span>New dock</div>
+      <div class="choice" onclick="pick(this)"><span class="ci">🧱</span>Seawall</div>
+      <div class="choice" onclick="pick(this)"><span class="ci">⚓</span>Boat lift</div>
+      <div class="choice" onclick="pick(this)"><span class="ci">🔧</span>Dock repair</div>
+      <div class="choice" onclick="pick(this)"><span class="ci">🌊</span>Seawall repair</div>
+      <div class="choice" onclick="pick(this)"><span class="ci">❓</span>Not sure yet</div>
+    </div>
+
+    <label class="formlabel">Rough budget</label>
+    <div class="choice-grid">
+      <div class="choice" onclick="pick(this)">Under $10k</div>
+      <div class="choice sel" onclick="pick(this)">$10k–$30k</div>
+      <div class="choice" onclick="pick(this)">$30k+</div>
+    </div>
+
+    <div class="qrow">
+      <div>
+        <label class="formlabel">Your name</label>
+        <input class="field" placeholder="Jordan Rivera">
+      </div>
+      <div>
+        <label class="formlabel">Zip code</label>
+        <input class="field" placeholder="33602">
+      </div>
+    </div>
+    <div class="qrow">
+      <div>
+        <label class="formlabel">Email</label>
+        <input class="field" placeholder="you@email.com">
+      </div>
+      <div>
+        <label class="formlabel">Phone</label>
+        <input class="field" placeholder="(813) 555-0199">
+      </div>
+    </div>
+
+    <button class="btn btn-coral" style="width:100%;justify-content:center;font-size:1.05rem;padding:15px;" onclick="alert('Demo only — this is where the lead is captured, qualified, and routed to builders.')">Match me with builders →</button>
+
+    <div class="privacy">🔒 <span>By submitting, you agree to be contacted by matched builders. We log your consent (TCPA) and share details only with licensed contractors. This is the moment a homeowner becomes a billable lead.</span></div>
+  </div>
+  <div style="height:70px;"></div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><span class="dot" style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--teal),var(--aqua));display:inline-grid;place-items:center;vertical-align:middle;margin-right:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:18px;height:18px;"><path d="M3 18h18M5 18v-7l7-4 7 4v7"/></svg></span>Dockline</div>
+        <p class="blurb">Tampa Bay's independent guide to docks, seawalls &amp; boat lifts — and the builders who make them.</p>
+      </div>
+      <div>
+        <h5>Guides</h5>
+        <a onclick="show('guides')">Permits</a>
+        <a onclick="show('guides')">Costs</a>
+        <a onclick="show('guides')">Materials</a>
+        <a onclick="show('guides')">Maintenance</a>
+      </div>
+      <div>
+        <h5>For owners</h5>
+        <a onclick="show('quote')">Get free quotes</a>
+        <a onclick="show('directory')">Find a builder</a>
+        <a onclick="show('home')">Free planning kit</a>
+      </div>
+      <div>
+        <h5>For builders</h5>
+        <a onclick="show('directory')">List your business</a>
+        <a onclick="show('directory')">Buy leads</a>
+        <a>Featured placement</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Dockline. A Tampa Bay lead-gen demo.</span>
+      <span>Privacy · Terms · Builder Agreement</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- view router (in-memory, no storage) ----
+  function show(id){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on', a.dataset.nav===id));
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+  function pick(el){
+    [...el.parentElement.children].forEach(c=>c.classList.remove('sel'));
+    el.classList.add('sel');
+  }
+
+  // ---- content data ----
+  const thumbs = {
+    aware:'#dff0ee', consider:'#fbeccd', decide:'#fde0d6'
+  };
+  function thumbSVG(stage){
+    const c = stage==='aware'?['#6fc5bc','#15808f']:stage==='consider'?['#e8a33d','#d98a1f']:['#f2683c','#d9512a'];
+    return `<svg viewBox="0 0 400 168" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g${stage}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c[0]}"/><stop offset="1" stop-color="${c[1]}"/></linearGradient></defs><rect width="400" height="168" fill="url(#g${stage})"/><path d="M0,120 C90,150 150,90 240,115 C320,138 360,100 400,118 L400,168 L0,168 Z" fill="rgba(255,255,255,.18)"/><path d="M0,138 C100,165 180,110 260,135 C330,156 370,128 400,140 L400,168 L0,168 Z" fill="rgba(255,255,255,.25)"/><g stroke="#fff" stroke-width="3" fill="none" opacity=".85"><path d="M150,95 h100 M165,95 v-30 l35-18 35,18 v30"/></g></svg>`;
+  }
+  const posts = [
+    {stage:'aware',cat:'Permits',t:'Do I Need a Permit to Build a Dock in Tampa Bay?',d:'In Florida, usually yes — and often more than one. Here\'s every agency, plain and simple.',read:'7 min',link:'article'},
+    {stage:'aware',cat:'Costs',t:'How Much Does a Dock Cost in Tampa? (2026 Guide)',d:'Most owners land near $15k, but the range runs $750 to $65k. What actually moves the price.',read:'8 min'},
+    {stage:'aware',cat:'Design',t:'Floating vs. Fixed Docks: Which Suits Tampa Bay?',d:'Tides, water depth, and boat size decide this one. A clear breakdown of both styles.',read:'6 min'},
+    {stage:'aware',cat:'Materials',t:'Best Dock Materials for Saltwater: Wood vs Composite vs Aluminum',d:'Salt and sun are brutal. Which decking and hardware actually last on the Gulf coast.',read:'7 min'},
+    {stage:'aware',cat:'Basics',t:'Dock, Seawall or Bulkhead — What Does My Property Need?',d:'They solve different problems. Know which protects your shoreline and which gets you on the water.',read:'5 min'},
+    {stage:'aware',cat:'Value',t:'Does Adding a Dock Increase Your Home\'s Value?',d:'Waterfront access is a selling point — here\'s what a dock realistically adds in Tampa Bay.',read:'5 min'},
+    {stage:'consider',cat:'Hiring',t:'12 Questions to Ask Before Hiring a Tampa Dock Builder',d:'The questions that separate true pros from the cheapest bid. Print this before you call anyone.',read:'9 min'},
+    {stage:'consider',cat:'Costs',t:'What\'s Included vs Excluded in a Dock Quote',d:'Permits, surveys, trenching, utilities — the line items that quietly add thousands.',read:'6 min'},
+    {stage:'decide',cat:'Connect',t:'Ready to Build? Get 3 Free Quotes from Licensed Builders',d:'Tell us your project and we\'ll match you with vetted Tampa Bay marine contractors.',read:'2 min',link:'quote'}
+  ];
+  const cats = [
+    {t:'Permits & Regulations',d:'FDEP, Army Corps, county & HOA rules decoded.',n:'8 guides',ic:'<path d="M9 12h6M9 16h6M9 8h6M5 4h14v16H5z"/>'},
+    {t:'Costs & Budgeting',d:'Real Tampa price ranges and hidden line items.',n:'7 guides',ic:'<path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>'},
+    {t:'Materials & Design',d:'Floating vs fixed, wood vs composite, and more.',n:'9 guides',ic:'<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>'},
+    {t:'Dock vs. Seawall',d:'Shoreline protection vs water access explained.',n:'5 guides',ic:'<path d="M2 12h20M2 12c4-6 16-6 20 0M2 12c4 6 16 6 20 0"/>'},
+    {t:'Maintenance & Lifespan',d:'How long docks last in saltwater and how to extend it.',n:'6 guides',ic:'<path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2-2z"/>'},
+    {t:'Hiring a Builder',d:'Vetting, contracts, and the questions to ask.',n:'5 guides',ic:'<path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8M22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/>'}
+  ];
+  const builders = [
+    {n:'Bayfront Marine',i:'BM',loc:'South Tampa · Hillsborough',stars:'★★★★★',r:'4.9 (132)',tags:['New docks','Boat lifts','Seawalls'],feat:true},
+    {n:'Gulf Coast Dock Co.',i:'GC',loc:'Clearwater · Pinellas',stars:'★★★★★',r:'4.8 (98)',tags:['Composite docks','Repairs'],feat:false},
+    {n:'Salt &amp; Cedar Builders',i:'SC',loc:'Apollo Beach',stars:'★★★★☆',r:'4.7 (64)',tags:['Custom design','Seawalls'],feat:false},
+    {n:'Tideline Construction',i:'TC',loc:'St. Petersburg',stars:'★★★★★',r:'4.9 (115)',tags:['Seawalls','Permitting'],feat:false}
+  ];
+
+  function card(p){
+    const label = p.stage==='aware'?'Awareness':p.stage==='consider'?'Consideration':'Decision';
+    const pill = p.stage==='aware'?'aware':p.stage==='consider'?'consider':'decide';
+    const onclick = p.link?`onclick="show('${p.link}')"`:`onclick="show('article')"`;
+    return `<div class="post" ${onclick}>
+      <div class="thumb">${thumbSVG(p.stage)}</div>
+      <div class="body">
+        <span class="pill ${pill}">${label} · ${p.cat}</span>
+        <h3>${p.t}</h3>
+        <p>${p.d}</p>
+        <div class="meta">${p.read} read &nbsp;·&nbsp; Read guide →</div>
+      </div></div>`;
+  }
+  function builderCard(b){
+    return `<div class="builder ${b.feat?'feat':''}">
+      <div class="avatar">${b.i}</div>
+      <div class="info">
+        <h3>${b.n} ${b.feat?'<span class="verified">Licensed</span>':''}</h3>
+        <div class="loc">📍 ${b.loc}</div>
+        <div class="stars">${b.stars} <span style="color:var(--ink-soft);font-size:.82rem;font-weight:600;">${b.r}</span></div>
+        <div class="tags">${b.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+        <button class="btn btn-ghost" style="font-size:.82rem;padding:8px 16px;" onclick="show('quote')">Request a quote</button>
+      </div></div>`;
+  }
+
+  // ---- render ----
+  document.getElementById('featured').innerHTML = posts.slice(0,3).map(card).join('');
+  document.getElementById('allposts').innerHTML = posts.map(card).join('');
+  document.getElementById('related').innerHTML = posts.slice(1,4).map(card).join('');
+  document.getElementById('cats').innerHTML = cats.map(c=>`<div class="cat" onclick="show('guides')">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">${c.ic}</svg></div>
+      <h4>${c.t}</h4><p>${c.d}</p><span class="count">${c.n} →</span></div>`).join('');
+  document.getElementById('dirteaser').innerHTML = builders.slice(0,2).map(builderCard).join('');
+  document.getElementById('fulldir').innerHTML = builders.map(builderCard).join('');
+
+  // filter bar
+  const filters = ['All','Awareness','Consideration','Decision'];
+  const fmap = {Awareness:'aware',Consideration:'consider',Decision:'decide'};
+  document.getElementById('filterbar').innerHTML = filters.map((f,i)=>`<button class="btn ${i===0?'btn-ocean':'btn-ghost'}" data-f="${f}" onclick="filterPosts('${f}',this)">${f}</button>`).join('');
+  function filterPosts(f,btn){
+    document.querySelectorAll('#filterbar .btn').forEach(b=>{b.className='btn btn-ghost';});
+    btn.className='btn btn-ocean';
+    const list = f==='All'?posts:posts.filter(p=>p.stage===fmap[f]);
+    document.getElementById('allposts').innerHTML = list.map(card).join('');
+  }
+</script>
+</body>
+</html>

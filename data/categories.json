@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "permits-regulations",
+    "title": "Permits & Regulations",
+    "description": "FDEP, Army Corps, county & HOA rules decoded.",
+    "count": "8 guides",
+    "iconPath": "M9 12h6M9 16h6M9 8h6M5 4h14v16H5z"
+  },
+  {
+    "slug": "costs-budgeting",
+    "title": "Costs & Budgeting",
+    "description": "Real Tampa price ranges and hidden line items.",
+    "count": "7 guides",
+    "iconPath": "M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"
+  },
+  {
+    "slug": "materials-design",
+    "title": "Materials & Design",
+    "description": "Floating vs fixed, wood vs composite, and more.",
+    "count": "9 guides",
+    "iconPath": "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+  },
+  {
+    "slug": "dock-vs-seawall",
+    "title": "Dock vs. Seawall",
+    "description": "Shoreline protection vs water access explained.",
+    "count": "5 guides",
+    "iconPath": "M2 12h20M2 12c4-6 16-6 20 0M2 12c4 6 16 6 20 0"
+  },
+  {
+    "slug": "maintenance-lifespan",
+    "title": "Maintenance & Lifespan",
+    "description": "How long docks last in saltwater and how to extend it.",
+    "count": "6 guides",
+    "iconPath": "M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2-2z"
+  },
+  {
+    "slug": "hiring-a-builder",
+    "title": "Hiring a Builder",
+    "description": "Vetting, contracts, and the questions to ask.",
+    "count": "5 guides",
+    "iconPath": "M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8M22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"
+  }
+]

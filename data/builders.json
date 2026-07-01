@@ -1,0 +1,158 @@
+[
+  {
+    "slug": "bayfront-marine",
+    "name": "Bayfront Marine",
+    "initials": "BM",
+    "location": "South Tampa · Hillsborough",
+    "stars": "★★★★★",
+    "rating": "4.9 (132)",
+    "ratingValue": 4.9,
+    "reviewCount": 132,
+    "tags": ["New docks", "Boat lifts", "Seawalls"],
+    "featured": true,
+    "tagline": "Custom-built docks and lifts for South Tampa waterfront homes.",
+    "about": "Family-owned since 2008, Bayfront Marine specializes in turnkey dock and boat lift builds across Tampa Bay. We handle design, permitting, pilings, decking, electrical, and lift installation in-house — no subcontracted handoffs.",
+    "established": 2008,
+    "license": "FL Marine Contractor #MC-4421",
+    "insured": true,
+    "phone": "(813) 555-0142",
+    "email": "hello@bayfrontmarine.com",
+    "website": "https://bayfrontmarine.com",
+    "address": "3412 S Westshore Blvd, Tampa, FL 33611",
+    "hours": "Mon–Fri 8am–5pm · Sat by appointment",
+    "serviceAreas": ["South Tampa", "Davis Islands", "Apollo Beach", "Riverview", "Hillsborough County"],
+    "services": [
+      { "name": "New dock construction", "desc": "Composite, Trex, and Brazilian hardwood decking on concrete or composite pilings." },
+      { "name": "Boat lift installation", "desc": "4-post and elevator lifts from 6,000 to 30,000 lbs with smart controls." },
+      { "name": "Seawall repair & build", "desc": "Vinyl and concrete seawall panels with helical tieback systems." },
+      { "name": "Permitting & engineering", "desc": "We handle ACOE, FDEP, and county submittals end-to-end." }
+    ],
+    "projects": [
+      { "name": "Davis Islands 220ft seawall + dock", "year": 2025, "summary": "Vinyl seawall rebuild with 60ft T-dock, 16,000 lb lift, and night lighting." },
+      { "name": "Apollo Beach private dock", "year": 2024, "summary": "Composite L-dock with twin jet ski platforms and remote-controlled lift." },
+      { "name": "Tampa Bay yacht club refit", "year": 2024, "summary": "Replaced 8 finger piers with low-maintenance composite decking." }
+    ],
+    "testimonials": [
+      { "author": "Marcus T.", "neighborhood": "Davis Islands", "quote": "They pulled permits in 6 weeks and finished 3 days ahead of schedule. Crew cleaned up every single night." },
+      { "author": "Lena K.", "neighborhood": "South Tampa", "quote": "We got three bids — Bayfront was the most detailed and the most honest about what would and wouldn't survive a storm." }
+    ],
+    "faqs": [
+      { "q": "How long does a typical dock build take?", "a": "From signed contract to handover: usually 10–14 weeks, of which 5–7 are permitting." },
+      { "q": "Do you handle seawall and dock together?", "a": "Yes — bundling saves on mobilization and lets us sequence pilings around the seawall tieback." }
+    ]
+  },
+  {
+    "slug": "gulf-coast-dock-co",
+    "name": "Gulf Coast Dock Co.",
+    "initials": "GC",
+    "location": "Clearwater · Pinellas",
+    "stars": "★★★★★",
+    "rating": "4.8 (98)",
+    "ratingValue": 4.8,
+    "reviewCount": 98,
+    "tags": ["Composite docks", "Repairs"],
+    "featured": false,
+    "tagline": "Composite-first dock builders serving Pinellas County since 2012.",
+    "about": "Gulf Coast Dock Co. focuses on low-maintenance composite builds and storm-damage repairs across Clearwater, Dunedin, and Belleair. Most of our work is referral-based — we keep the crew small on purpose.",
+    "established": 2012,
+    "license": "FL Marine Contractor #MC-5108",
+    "insured": true,
+    "phone": "(727) 555-0119",
+    "email": "office@gulfcoastdock.com",
+    "website": "https://gulfcoastdock.com",
+    "address": "1208 Court St, Clearwater, FL 33756",
+    "hours": "Mon–Fri 7:30am–4:30pm",
+    "serviceAreas": ["Clearwater", "Dunedin", "Belleair", "Indian Rocks Beach", "Pinellas County"],
+    "services": [
+      { "name": "Composite dock builds", "desc": "Trex Transcend and TimberTech AZEK on aluminum or composite framing." },
+      { "name": "Storm damage repair", "desc": "Insurance-friendly assessments and rebuilds for hurricane-damaged docks." },
+      { "name": "Decking replacement", "desc": "Swap rotting wood for composite while keeping existing pilings." }
+    ],
+    "projects": [
+      { "name": "Belleair Causeway storm rebuild", "year": 2025, "summary": "Helene-damaged dock rebuilt with reinforced pilings and elevated electrical." },
+      { "name": "Dunedin composite refit", "year": 2024, "summary": "Replaced 800 sq ft of pressure-treated decking with composite over two weekends." }
+    ],
+    "testimonials": [
+      { "author": "Priya R.", "neighborhood": "Clearwater", "quote": "After Helene we had three contractors ghost us. Gulf Coast showed up the next week and started the insurance paperwork for us." }
+    ],
+    "faqs": [
+      { "q": "Can you reuse my existing pilings?", "a": "If pilings pass our sound + visual inspection and have 10+ years of expected life, yes — we'll only replace decking and framing." }
+    ]
+  },
+  {
+    "slug": "salt-and-cedar-builders",
+    "name": "Salt & Cedar Builders",
+    "initials": "SC",
+    "location": "Apollo Beach",
+    "stars": "★★★★☆",
+    "rating": "4.7 (64)",
+    "ratingValue": 4.7,
+    "reviewCount": 64,
+    "tags": ["Custom design", "Seawalls"],
+    "featured": false,
+    "tagline": "Bespoke waterfront design — docks, seawalls, and outdoor living.",
+    "about": "We're a design-build shop. Half our projects start as a hand sketch with the homeowner. Expect more thought on shade, lighting, and outdoor kitchens than a typical dock builder.",
+    "established": 2016,
+    "license": "FL Marine Contractor #MC-6042",
+    "insured": true,
+    "phone": "(813) 555-0188",
+    "email": "studio@saltandcedar.com",
+    "website": "https://saltandcedar.com",
+    "address": "6602 Apollo Beach Blvd, Apollo Beach, FL 33572",
+    "hours": "Tue–Sat 9am–6pm",
+    "serviceAreas": ["Apollo Beach", "Ruskin", "MiraBay", "South Shore"],
+    "services": [
+      { "name": "Custom dock design", "desc": "Drawings, 3D renderings, and material specs before a single piling goes in." },
+      { "name": "Seawall builds", "desc": "Vinyl and architectural concrete seawalls with integrated steps and access." },
+      { "name": "Outdoor living integration", "desc": "Dock-side kitchens, fire features, shade structures, and lighting." }
+    ],
+    "projects": [
+      { "name": "MiraBay U-dock with shade pergola", "year": 2025, "summary": "Custom U-dock with cedar pergola, integrated bar, and Sonos zone." },
+      { "name": "Apollo Beach seawall + steps", "year": 2023, "summary": "Architectural concrete seawall with cast-in stairs and limestone caps." }
+    ],
+    "testimonials": [
+      { "author": "Daniel & Iris H.", "neighborhood": "MiraBay", "quote": "They actually listened. We ended up with a pergola we didn't know we wanted and now use the dock every night." }
+    ],
+    "faqs": [
+      { "q": "Do you handle smaller repair jobs?", "a": "Rarely — we focus on full design-build projects $40k+. We're happy to refer you out for smaller work." }
+    ]
+  },
+  {
+    "slug": "tideline-construction",
+    "name": "Tideline Construction",
+    "initials": "TC",
+    "location": "St. Petersburg",
+    "stars": "★★★★★",
+    "rating": "4.9 (115)",
+    "ratingValue": 4.9,
+    "reviewCount": 115,
+    "tags": ["Seawalls", "Permitting"],
+    "featured": false,
+    "tagline": "Permit-first marine contractor across St. Pete and Tierra Verde.",
+    "about": "Tideline is led by a former county permit reviewer. We win on hard sites — manatee zones, mangrove setbacks, and properties caught between FDEP and ACOE jurisdictions.",
+    "established": 2014,
+    "license": "FL Marine Contractor #MC-5519",
+    "insured": true,
+    "phone": "(727) 555-0204",
+    "email": "permits@tidelinefl.com",
+    "website": "https://tidelinefl.com",
+    "address": "180 5th St N, St. Petersburg, FL 33701",
+    "hours": "Mon–Fri 8am–5pm",
+    "serviceAreas": ["St. Petersburg", "Tierra Verde", "Snell Isle", "Gulfport", "Pinellas Point"],
+    "services": [
+      { "name": "Permitting consulting", "desc": "Sole-source permit packages for ACOE, FDEP, SWFWMD, and county." },
+      { "name": "Seawall construction", "desc": "Vinyl, concrete, and rip-rap shoreline stabilization." },
+      { "name": "Manatee-zone dock builds", "desc": "Slow-speed, low-impact dock builds that pass FWC review." }
+    ],
+    "projects": [
+      { "name": "Snell Isle seawall replacement", "year": 2025, "summary": "240ft vinyl seawall with helical tiebacks and matched coping." },
+      { "name": "Tierra Verde manatee-zone dock", "year": 2024, "summary": "Elevated dock with grated decking to preserve seagrass below." }
+    ],
+    "testimonials": [
+      { "author": "Will M.", "neighborhood": "Snell Isle", "quote": "Two prior contractors said our setback wouldn't permit. Tideline got it through in 4 months." }
+    ],
+    "faqs": [
+      { "q": "How do you handle manatee-zone projects?", "a": "We pre-coordinate with FWC, use grated decking and minimal pilings, and schedule construction outside seasonal restrictions." }
+    ]
+  }
+]
