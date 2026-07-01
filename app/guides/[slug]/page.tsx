@@ -77,7 +77,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </span>
         <h1>{post.title}</h1>
         <div className="art-meta">
-          <div className="av">DL</div>
+          <div className="av">MG</div>
           <div>
             By the {post.author} · Updated{" "}
             {new Date(post.updatedAt || post.publishedAt).toLocaleDateString("en-US", {

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import site from "@/data/site.json";
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer>
       <div className="wrap">
@@ -24,10 +26,11 @@ export function Footer() {
                   <path d="M3 18h18M5 18v-7l7-4 7 4v7" />
                 </svg>
               </span>
-              Dockline
+              {site.shortName}
             </div>
             <p className="blurb">
-              Tampa Bay&apos;s independent guide to docks, seawalls &amp; boat lifts — and the builders who make them.
+              Tampa Bay&apos;s independent guide to docks, seawalls &amp; boat lifts — and the licensed builders who
+              make them.
             </p>
           </div>
           <div>
@@ -51,7 +54,7 @@ export function Footer() {
           </div>
         </div>
         <div className="foot-bot">
-          <span>© 2026 Dockline. A Tampa Bay lead-gen demo.</span>
+          <span>© {year} {site.name}. Tampa Bay dock, seawall &amp; boat lift guide.</span>
           <span>Privacy · Terms · Builder Agreement</span>
         </div>
       </div>

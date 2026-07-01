@@ -8,12 +8,12 @@ import { breadcrumbSchema, baseUrl } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Dock & Seawall Guides for Tampa Bay Owners",
   description:
-    "The Dockline library: permits, costs, materials, lifespan, and hiring — every guide a Tampa Bay waterfront owner needs before they build.",
+    "Plain-English guides on dock permits, costs, materials, lifespan, and hiring for Tampa Bay waterfront homeowners — everything you need before you build.",
   alternates: { canonical: "/guides" },
   openGraph: {
     title: "Dock & Seawall Guides for Tampa Bay Owners",
     description:
-      "Permits, costs, materials, lifespan, hiring — the awareness library that does the ranking and the teaching.",
+      "Permits, costs, materials, lifespan, hiring — the library Tampa Bay waterfront owners read before they build.",
     url: "/guides",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Dockline Guides",
+  name: `${site.name} Guides`,
   url: `${baseUrl}/guides`,
   description:
     "Permits, costs, materials, lifespan, and hiring guides for Tampa Bay dock and seawall owners.",
@@ -50,7 +50,7 @@ export default function GuidesPage() {
       />
       <section className="hero" style={{ paddingBottom: 0 }}>
         <div className="wrap" style={{ padding: "56px 28px 90px" }}>
-          <span className="eyebrow">The Dockline Guides</span>
+          <span className="eyebrow">The {site.shortName} Guides</span>
           <h1 style={{ fontSize: "2.8rem" }}>Everything before you build</h1>
           <p className="lede">
             Permits, costs, materials, lifespan, hiring — the awareness library that does the ranking and the teaching.

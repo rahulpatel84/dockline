@@ -46,7 +46,22 @@ export const metadata: Metadata = {
     "dock cost Tampa",
     "Hillsborough dock permit",
     "Pinellas dock builder",
+    "St. Petersburg dock builder",
+    "Clearwater seawall",
+    "Apollo Beach marine contractor",
+    "FDEP dock permit",
+    "Army Corps dock permit Florida",
+    "composite dock Tampa",
+    "floating dock Tampa Bay",
+    "seawall cost Florida",
   ],
+  verification: {
+    google: "",
+    yandex: "",
+    other: {
+      "msvalidate.01": "",
+    },
+  },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
