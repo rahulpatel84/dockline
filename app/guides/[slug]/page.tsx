@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import posts from "@/data/posts.json";
+import site from "@/data/site.json";
 import { ArticleBody } from "@/components/ArticleBody";
 import { PostCard } from "@/components/PostCard";
 import { JsonLd } from "@/components/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/jsonld";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 type Post = (typeof posts)[number];
 
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: p.title,
     description: p.description,
+    keywords: [p.category, "Tampa Bay dock", "Tampa dock guide", p.title],
     alternates: { canonical: url },
     openGraph: {
       title: p.title,
@@ -36,13 +38,32 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: p.publishedAt,
       modifiedTime: p.updatedAt || p.publishedAt,
       authors: [p.author],
+      section: p.category,
+      images: [{ url: site.ogImage, width: 1200, height: 630, alt: p.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: p.title,
       description: p.description,
+      images: [site.ogImage],
     },
   };
+}
+
+type FaqBlock = { type: string; heading?: string; items?: { q: string; a: string }[] };
+
+function extractFaqs(body: unknown[]): { q: string; a: string }[] {
+  const faqs: { q: string; a: string }[] = [];
+  for (const raw of body) {
+    if (!raw || typeof raw !== "object") continue;
+    const b = raw as FaqBlock;
+    if ((b.type === "faq" || b.type === "faqs") && Array.isArray(b.items)) {
+      for (const it of b.items) {
+        if (it && typeof it.q === "string" && typeof it.a === "string") faqs.push({ q: it.q, a: it.a });
+      }
+    }
+  }
+  return faqs;
 }
 
 const stageLabel = { aware: "Awareness", consider: "Consideration", decide: "Decision" } as const;
@@ -54,6 +75,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!post) notFound();
 
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const faqs = extractFaqs(post.body as unknown[]);
 
   return (
     <main className="page">
@@ -65,6 +87,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             { name: "Guides", href: "/guides" },
             { name: post.title, href: `/guides/${post.slug}` },
           ]),
+          ...(faqs.length ? [faqSchema(faqs)] : []),
         ]}
       />
 

@@ -9,5 +9,26 @@
   "areaServed": ["Tampa", "Hillsborough County", "Pinellas County", "St. Petersburg", "Clearwater", "Apollo Beach"],
   "founded": "2026",
   "logo": "/logo.png",
-  "ogImage": "/og.png"
+  "ogImage": "/og.png",
+  "contact": {
+    "email": "hello@mydockguide.com",
+    "supportEmail": "support@mydockguide.com",
+    "region": "Tampa Bay, FL",
+    "addressLocality": "Tampa",
+    "addressRegion": "FL",
+    "postalCode": "33602",
+    "addressCountry": "US"
+  },
+  "social": {
+    "twitter": "https://twitter.com/mydockguide",
+    "facebook": "https://www.facebook.com/mydockguide",
+    "instagram": "https://www.instagram.com/mydockguide",
+    "linkedin": "https://www.linkedin.com/company/mydockguide",
+    "youtube": "https://www.youtube.com/@mydockguide"
+  },
+  "verification": {
+    "google": "",
+    "bing": "",
+    "yandex": ""
+  }
 }

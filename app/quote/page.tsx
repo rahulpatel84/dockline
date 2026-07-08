@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
 import { QuoteForm } from "@/components/QuoteForm";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, baseUrl } from "@/lib/jsonld";
+import { breadcrumbSchema, baseUrl, webPageSchema } from "@/lib/jsonld";
 import site from "@/data/site.json";
+
+const description =
+  "Tell us about your project. We'll match you with up to three licensed Tampa Bay dock, seawall, and boat lift builders — free, no obligation.";
 
 export const metadata: Metadata = {
   title: "Get 3 Free Dock Quotes in Tampa Bay",
-  description:
-    "Tell us about your project. We'll match you with up to three licensed Tampa Bay dock, seawall, and boat lift builders — free, no obligation.",
+  description,
+  keywords: [
+    "free dock quote Tampa",
+    "Tampa dock builder quote",
+    "compare Tampa seawall quotes",
+    "boat lift installer quote Florida",
+  ],
   alternates: { canonical: "/quote" },
   openGraph: {
     title: "Get 3 Free Dock Quotes in Tampa Bay",
@@ -15,6 +23,11 @@ export const metadata: Metadata = {
       "Get matched with vetted licensed Tampa Bay marine contractors — free, no obligation.",
     url: "/quote",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get 3 Free Dock Quotes in Tampa Bay",
+    description,
   },
 };
 
@@ -34,6 +47,12 @@ export default function QuotePage() {
     <main className="page">
       <JsonLd
         data={[
+          webPageSchema({
+            path: "/quote",
+            title: "Get 3 Free Dock Quotes in Tampa Bay",
+            description,
+            speakableSelectors: [".quote-hero h1", ".quote-hero p"],
+          }),
           serviceSchema,
           breadcrumbSchema([
             { name: "Home", href: "/" },

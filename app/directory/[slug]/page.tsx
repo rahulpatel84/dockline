@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import builders from "@/data/builders.json";
+import site from "@/data/site.json";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, baseUrl } from "@/lib/jsonld";
+import { breadcrumbSchema, baseUrl, faqSchema, reviewsFromTestimonials, webPageSchema } from "@/lib/jsonld";
 
 type Builder = (typeof builders)[number];
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return builders.map((b) => ({ slug: b.slug }));
@@ -24,8 +27,21 @@ export async function generateMetadata({
   return {
     title,
     description,
+    keywords: [b.name, "Tampa dock builder", b.location, ...(b.tags ?? [])],
     alternates: { canonical: `/directory/${b.slug}` },
-    openGraph: { title, description, url: `/directory/${b.slug}`, type: "profile" },
+    openGraph: {
+      title,
+      description,
+      url: `/directory/${b.slug}`,
+      type: "profile",
+      images: [{ url: site.ogImage, width: 1200, height: 630, alt: b.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [site.ogImage],
+    },
   };
 }
 
@@ -37,21 +53,41 @@ export default async function BuilderProfile({ params }: { params: Promise<{ slu
 
   const related = builders.filter((x) => x.slug !== b.slug).slice(0, 3);
 
+  const url = `${baseUrl}/directory/${b.slug}`;
+  const reviews = b.testimonials ? reviewsFromTestimonials(b.testimonials, b.name) : [];
   const profileSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `${baseUrl}/directory/${b.slug}`,
+    "@id": `${url}#business`,
     name: b.name,
     description: b.about,
-    url: `${baseUrl}/directory/${b.slug}`,
+    url,
     telephone: b.phone,
     email: b.email,
     image: `${baseUrl}/og.png`,
+    priceRange: "$$",
     address: { "@type": "PostalAddress", streetAddress: b.address, addressRegion: "FL", addressCountry: "US" },
     areaServed: b.serviceAreas?.map((a) => ({ "@type": "Place", name: a })),
-    aggregateRating: { "@type": "AggregateRating", ratingValue: b.ratingValue, reviewCount: b.reviewCount },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: b.ratingValue,
+      reviewCount: b.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
     knowsAbout: b.tags,
     foundingDate: b.established ? String(b.established) : undefined,
+    hasOfferCatalog: b.services
+      ? {
+          "@type": "OfferCatalog",
+          name: `${b.name} services`,
+          itemListElement: b.services.map((s) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: s.name, description: s.desc },
+          })),
+        }
+      : undefined,
+    ...(reviews.length ? { review: reviews } : {}),
   };
 
   const yearsActive = b.established ? new Date().getFullYear() - b.established : null;
@@ -60,12 +96,19 @@ export default async function BuilderProfile({ params }: { params: Promise<{ slu
     <main className="page">
       <JsonLd
         data={[
+          webPageSchema({
+            path: `/directory/${b.slug}`,
+            title: `${b.name} — Tampa Bay Dock Builder`,
+            description: b.tagline ?? b.about,
+            speakableSelectors: [".profile-hero h1", ".profile-tagline"],
+          }),
           breadcrumbSchema([
             { name: "Home", href: "/" },
             { name: "Find a Builder", href: "/directory" },
             { name: b.name, href: `/directory/${b.slug}` },
           ]),
           profileSchema,
+          ...(b.faqs && b.faqs.length ? [faqSchema(b.faqs)] : []),
         ]}
       />
 

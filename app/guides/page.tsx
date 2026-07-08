@@ -3,12 +3,22 @@ import posts from "@/data/posts.json";
 import site from "@/data/site.json";
 import { GuidesFilter } from "@/components/GuidesFilter";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, baseUrl } from "@/lib/jsonld";
+import { breadcrumbSchema, baseUrl, itemListSchema, webPageSchema } from "@/lib/jsonld";
+
+const description =
+  "Plain-English guides on dock permits, costs, materials, lifespan, and hiring for Tampa Bay waterfront homeowners — everything you need before you build.";
 
 export const metadata: Metadata = {
   title: "Dock & Seawall Guides for Tampa Bay Owners",
-  description:
-    "Plain-English guides on dock permits, costs, materials, lifespan, and hiring for Tampa Bay waterfront homeowners — everything you need before you build.",
+  description,
+  keywords: [
+    "Tampa dock guide",
+    "dock permits Tampa",
+    "seawall guide Florida",
+    "boat lift cost Tampa",
+    "dock materials Tampa Bay",
+    "how to build a dock in Florida",
+  ],
   alternates: { canonical: "/guides" },
   openGraph: {
     title: "Dock & Seawall Guides for Tampa Bay Owners",
@@ -17,22 +27,32 @@ export const metadata: Metadata = {
     url: "/guides",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dock & Seawall Guides for Tampa Bay Owners",
+    description,
+  },
 };
 
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "@id": `${baseUrl}/guides#collection`,
   name: `${site.name} Guides`,
   url: `${baseUrl}/guides`,
   description:
     "Permits, costs, materials, lifespan, and hiring guides for Tampa Bay dock and seawall owners.",
-  isPartOf: { "@type": "WebSite", name: site.name, url: baseUrl },
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${baseUrl}#website` },
+  about: { "@id": `${baseUrl}#organization` },
   hasPart: posts.map((p) => ({
     "@type": "Article",
     headline: p.title,
+    description: p.description,
     url: `${baseUrl}/guides/${p.slug}`,
     datePublished: p.publishedAt,
     dateModified: p.updatedAt || p.publishedAt,
+    author: { "@type": "Organization", name: p.author },
   })),
 };
 
@@ -41,7 +61,14 @@ export default function GuidesPage() {
     <main className="page">
       <JsonLd
         data={[
+          webPageSchema({
+            path: "/guides",
+            title: "Dock & Seawall Guides for Tampa Bay Owners",
+            description,
+            speakableSelectors: [".hero h1", ".hero .lede"],
+          }),
           collectionSchema,
+          itemListSchema(posts.map((p) => ({ url: `/guides/${p.slug}`, name: p.title }))),
           breadcrumbSchema([
             { name: "Home", href: "/" },
             { name: "Guides", href: "/guides" },

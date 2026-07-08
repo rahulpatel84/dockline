@@ -25,6 +25,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#0c3b46",
+  colorScheme: "light",
 };
 
 export const metadata: Metadata = {
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
-  authors: [{ name: site.name }],
+  authors: [{ name: site.name, url: baseUrl }],
+  creator: site.name,
+  publisher: site.name,
   generator: "Next.js",
   keywords: [
     "Tampa dock builder",
@@ -54,15 +57,26 @@ export const metadata: Metadata = {
     "composite dock Tampa",
     "floating dock Tampa Bay",
     "seawall cost Florida",
+    "mydockguide",
   ],
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   verification: {
-    google: "",
-    yandex: "",
-    other: {
-      "msvalidate.01": "",
+    google: site.verification?.google || undefined,
+    yandex: site.verification?.yandex || undefined,
+    other: site.verification?.bing ? { "msvalidate.01": site.verification.bing } : undefined,
+  },
+  alternates: {
+    canonical: "/",
+    languages: { "en-US": "/" },
+    types: {
+      "application/rss+xml": "/feed.xml",
     },
   },
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: site.locale,
@@ -70,7 +84,15 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: [{ url: site.ogImage, width: 1200, height: 630, alt: site.name }],
+    images: [
+      {
+        url: site.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — ${site.tagline}`,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -78,14 +100,36 @@ export const metadata: Metadata = {
     description: site.description,
     images: [site.ogImage],
     creator: site.twitter,
+    site: site.twitter,
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
   },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/manifest.webmanifest",
   category: "construction",
+  other: {
+    "geo.region": "US-FL",
+    "geo.placename": "Tampa Bay",
+    "geo.position": "27.9506;-82.4572",
+    ICBM: "27.9506, -82.4572",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

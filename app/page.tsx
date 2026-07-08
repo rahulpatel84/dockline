@@ -7,7 +7,7 @@ import site from "@/data/site.json";
 import { PostCard } from "@/components/PostCard";
 import { BuilderCard } from "@/components/BuilderCard";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, itemListSchema, webPageSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     url: "/",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+  },
 };
 
 const featured = posts.slice(0, 3);
@@ -26,7 +31,19 @@ const featured = posts.slice(0, 3);
 export default function HomePage() {
   return (
     <main className="page">
-      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }])} />
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: "/",
+            title: `${site.name} — ${site.tagline}`,
+            description: site.description,
+            breadcrumb: [{ name: "Home", href: "/" }],
+            speakableSelectors: [".hero h1", ".hero .lede"],
+          }),
+          breadcrumbSchema([{ name: "Home", href: "/" }]),
+          itemListSchema(featured.map((p) => ({ url: `/guides/${p.slug}`, name: p.title }))),
+        ]}
+      />
 
       {/* HERO */}
       <section className="hero">

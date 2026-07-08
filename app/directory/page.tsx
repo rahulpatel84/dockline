@@ -3,12 +3,21 @@ import Link from "next/link";
 import builders from "@/data/builders.json";
 import { DirectoryExplorer } from "@/components/DirectoryExplorer";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, localBusinessSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, itemListSchema, localBusinessSchema, webPageSchema } from "@/lib/jsonld";
+
+const description =
+  "Find licensed, insured marine contractors building docks, seawalls, and boat lifts across Tampa Bay. Reviewed and verified.";
 
 export const metadata: Metadata = {
   title: "Tampa Bay Dock Builder Directory",
-  description:
-    "Find licensed, insured marine contractors building docks, seawalls, and boat lifts across Tampa Bay. Reviewed and verified.",
+  description,
+  keywords: [
+    "Tampa dock builder directory",
+    "licensed marine contractors Tampa",
+    "seawall contractors Tampa Bay",
+    "boat lift installers Florida",
+    "dock builders near me",
+  ],
   alternates: { canonical: "/directory" },
   openGraph: {
     title: "Tampa Bay Dock Builder Directory",
@@ -17,6 +26,11 @@ export const metadata: Metadata = {
     url: "/directory",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tampa Bay Dock Builder Directory",
+    description,
+  },
 };
 
 export default function DirectoryPage() {
@@ -24,10 +38,19 @@ export default function DirectoryPage() {
     <main className="page">
       <JsonLd
         data={[
+          webPageSchema({
+            path: "/directory",
+            title: "Tampa Bay Dock Builder Directory",
+            description,
+            speakableSelectors: [".dir-hero h1", ".dir-hero .lede"],
+          }),
           breadcrumbSchema([
             { name: "Home", href: "/" },
             { name: "Find a Builder", href: "/directory" },
           ]),
+          itemListSchema(
+            builders.map((b) => ({ url: `/directory/${b.slug}`, name: b.name })),
+          ),
           ...builders.map((b) => localBusinessSchema(b)),
         ]}
       />
