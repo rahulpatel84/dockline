@@ -1,0 +1,59 @@
+{
+  "zoneDefinitions": {
+    "VE": {
+      "code": "VE",
+      "name": "V Zone (Velocity, Coastal High Hazard)",
+      "risk": "Highest",
+      "description": "Coastal zones subject to storm surge with wave action ≥ 3 ft. Homes must be elevated on pilings or columns; no enclosed space below Base Flood Elevation (BFE) except for parking, access, or storage.",
+      "insuranceImpact": "Most expensive flood zone. Requires special construction. Mandatory for federally-backed mortgages.",
+      "buildRules": "Docks and seawalls face strict wind + wave design rules. Solid walls below BFE are prohibited.",
+      "annualRiskPct": 1
+    },
+    "AE": {
+      "code": "AE",
+      "name": "A/AE Zone (Special Flood Hazard)",
+      "risk": "High",
+      "description": "1% annual chance of flooding (the '100-year' flood zone). BFE is defined. Common along Tampa Bay canals and rivers.",
+      "insuranceImpact": "Mandatory flood insurance if federally-backed mortgage. Rates vary by BFE compliance.",
+      "buildRules": "Structures must be at or above BFE. Dock and seawall permitting requires elevation certificates.",
+      "annualRiskPct": 1
+    },
+    "X-Shaded": {
+      "code": "X (Shaded)",
+      "name": "X Zone (Shaded / 0.2% Chance)",
+      "risk": "Moderate",
+      "description": "Areas of 0.2% annual chance flood (the '500-year' floodplain), or 1% chance flood with average depths less than 1 ft.",
+      "insuranceImpact": "Flood insurance not mandatory but strongly recommended. Rates are dramatically lower than AE/VE.",
+      "buildRules": "No BFE restrictions but still subject to standard county building codes.",
+      "annualRiskPct": 0.2
+    },
+    "X": {
+      "code": "X",
+      "name": "X Zone (Unshaded / Minimal Risk)",
+      "risk": "Low",
+      "description": "Areas outside the 0.2% annual chance floodplain.",
+      "insuranceImpact": "Flood insurance not required by lenders. Preferred-Risk Policies are cheap ($400–800/yr typical).",
+      "buildRules": "Standard county building codes only.",
+      "annualRiskPct": 0.1
+    }
+  },
+  "zipZones": {
+    "33602": { "primary": "AE", "bfeRange": [9, 12], "notes": "Downtown Tampa waterfront. Storm surge history: significant." },
+    "33606": { "primary": "AE", "secondary": "VE", "bfeRange": [10, 14], "notes": "Davis Islands / Hyde Park. Mix of AE and VE — waterfront lots often VE." },
+    "33611": { "primary": "AE", "bfeRange": [10, 13], "notes": "South Tampa / Ballast Point. Canal-front commonly AE, open Bay-front VE." },
+    "33629": { "primary": "AE", "bfeRange": [10, 14], "notes": "Sunset Park / South Tampa. Sinkholes rare; storm surge risk high." },
+    "33572": { "primary": "AE", "secondary": "VE", "bfeRange": [11, 15], "notes": "Apollo Beach. Mostly AE canals; VE on open bay." },
+    "33573": { "primary": "X-Shaded", "bfeRange": [8, 10], "notes": "Sun City Center. Inland — lower flood risk." },
+    "33701": { "primary": "AE", "secondary": "VE", "bfeRange": [11, 15], "notes": "Downtown St. Pete. Waterfront blocks are VE; interior AE." },
+    "33707": { "primary": "AE", "secondary": "VE", "bfeRange": [11, 14], "notes": "Pass-a-Grille / St. Pete Beach. Open Gulf front is VE." },
+    "33711": { "primary": "AE", "bfeRange": [10, 13], "notes": "Gulfport / Boca Ciega Bay. Canal system predominantly AE." },
+    "33702": { "primary": "AE", "bfeRange": [9, 12], "notes": "Riviera Bay / Shore Acres. Recurring nuisance flooding, high AE elevations." },
+    "33755": { "primary": "AE", "bfeRange": [11, 14], "notes": "Downtown Clearwater. Intercoastal exposure." },
+    "33767": { "primary": "VE", "secondary": "AE", "bfeRange": [13, 16], "notes": "Clearwater Beach. Predominantly VE — Gulf-front barrier island." },
+    "33770": { "primary": "AE", "bfeRange": [10, 13], "notes": "Largo / Belleair. Canal-front AE common." },
+    "34205": { "primary": "AE", "bfeRange": [10, 13], "notes": "Bradenton / Palma Sola." },
+    "34216": { "primary": "VE", "bfeRange": [13, 16], "notes": "Anna Maria Island. Almost entirely VE — full Gulf exposure." },
+    "34236": { "primary": "AE", "secondary": "VE", "bfeRange": [11, 15], "notes": "Downtown Sarasota. Waterfront blocks VE." },
+    "34242": { "primary": "VE", "bfeRange": [13, 16], "notes": "Siesta Key. Barrier island — VE predominant." }
+  }
+}

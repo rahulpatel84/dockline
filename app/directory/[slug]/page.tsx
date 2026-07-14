@@ -29,6 +29,12 @@ export async function generateMetadata({
     description,
     keywords: [b.name, "Tampa dock builder", b.location, ...(b.tags ?? [])],
     alternates: { canonical: `/directory/${b.slug}` },
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: { index: false, follow: false },
+    },
     openGraph: {
       title,
       description,

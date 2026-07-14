@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import posts from "@/data/posts.json";
 import categories from "@/data/categories.json";
-import builders from "@/data/builders.json";
 import site from "@/data/site.json";
 import { PostCard } from "@/components/PostCard";
-import { BuilderCard } from "@/components/BuilderCard";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, itemListSchema, webPageSchema } from "@/lib/jsonld";
 
@@ -242,22 +240,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* DIRECTORY TEASER */}
+      {/* HOW MATCHING WORKS */}
       <section className="block funnel">
         <div className="wrap">
           <div className="sec-head">
             <div className="kick">When you&apos;re ready</div>
-            <h2>Meet the builders</h2>
-            <p>Licensed, insured, and reviewed marine contractors serving Tampa Bay.</p>
+            <h2>How we match you with a builder</h2>
+            <p>
+              No sales calls. No spam. Just a fast form, a real match, and quotes from licensed Tampa Bay contractors —
+              free.
+            </p>
           </div>
-          <div className="dir-grid">
-            {builders.slice(0, 2).map((b) => (
-              <BuilderCard key={b.slug} builder={b} />
-            ))}
+          <div className="funnel-grid">
+            <div className="stage s1">
+              <span className="num">Step 01</span>
+              <h3>Tell us the basics</h3>
+              <p className="mood">
+                90-second form: project type, size, timeline, budget range, and your ZIP.
+              </p>
+              <ul>
+                <li>No credit card</li>
+                <li>No obligation</li>
+                <li>Private &amp; encrypted</li>
+              </ul>
+            </div>
+            <div className="stage s2">
+              <span className="num">Step 02</span>
+              <h3>We match, quietly</h3>
+              <p className="mood">
+                We hand your project to 2–3 vetted, licensed builders who actually work in your ZIP.
+              </p>
+              <ul>
+                <li>Licensed &amp; insured only</li>
+                <li>Background &amp; review checked</li>
+                <li>Never shared with 20 companies</li>
+              </ul>
+            </div>
+            <div className="stage s3">
+              <span className="num">Step 03</span>
+              <h3>Compare on your terms</h3>
+              <p className="mood">
+                Builders reach out within 48 hours. You compare quotes side-by-side and pick — or walk away.
+              </p>
+              <ul>
+                <li>Written quotes only</li>
+                <li>Free comparison worksheet</li>
+                <li>No follow-up harassment</li>
+              </ul>
+            </div>
           </div>
           <div style={{ textAlign: "center", marginTop: 36 }}>
-            <Link href="/directory" className="btn btn-ocean">
-              Browse the full directory →
+            <Link href="/quote" className="btn btn-coral">
+              Start the 90-second form →
             </Link>
           </div>
         </div>

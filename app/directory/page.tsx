@@ -19,6 +19,12 @@ export const metadata: Metadata = {
     "dock builders near me",
   ],
   alternates: { canonical: "/directory" },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false },
+  },
   openGraph: {
     title: "Tampa Bay Dock Builder Directory",
     description:

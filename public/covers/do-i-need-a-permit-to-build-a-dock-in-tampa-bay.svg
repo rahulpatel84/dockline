@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Do I Need a Permit for a Dock in Tampa Bay?">
+  
+    <rect width="1200" height="630" fill="#062a34" />
+    
+  <circle cx="1050" cy="130" r="140" fill="#ff6a5b" fill-opacity="0.35" />
+  <circle cx="1050" cy="130" r="98" fill="#ff6a5b" fill-opacity="0.55" />
+  <circle cx="1050" cy="130" r="56" fill="#ff6a5b" fill-opacity="0.85" />
+    
+  <g fill="#faf5ec" fill-opacity="0.15">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.09">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- Tilted document -->
+    <g transform="translate(360 90) rotate(-8)">
+      <rect x="0" y="0" width="480" height="600" rx="10" fill="#faf5ec" />
+      <rect x="0" y="0" width="480" height="80" fill="#0c3b46" fill-opacity="0.85" />
+      <text x="30" y="52" font-family="'Fraunces', serif" font-size="24" fill="#faf5ec" font-weight="700" letter-spacing="4">PERMIT · TAMPA BAY</text>
+
+      <!-- form fields -->
+      <g fill="#0f1b1d" fill-opacity="0.15">
+        <rect x="30" y="120" width="200" height="8" rx="4" />
+        <rect x="30" y="140" width="360" height="16" rx="4" fill-opacity="0.08" />
+        <rect x="30" y="180" width="180" height="8" rx="4" />
+        <rect x="30" y="200" width="300" height="16" rx="4" fill-opacity="0.08" />
+        <rect x="30" y="240" width="160" height="8" rx="4" />
+        <rect x="30" y="260" width="380" height="16" rx="4" fill-opacity="0.08" />
+        <rect x="30" y="300" width="220" height="8" rx="4" />
+        <rect x="30" y="320" width="340" height="16" rx="4" fill-opacity="0.08" />
+        <rect x="30" y="360" width="180" height="8" rx="4" />
+        <rect x="30" y="380" width="260" height="16" rx="4" fill-opacity="0.08" />
+      </g>
+
+      <!-- signature line -->
+      <line x1="30" y1="530" x2="240" y2="530" stroke="#0f1b1d" stroke-opacity="0.4" stroke-width="2" />
+      <text x="30" y="555" font-family="'Hanken Grotesk', sans-serif" font-size="12" fill="#0f1b1d" fill-opacity="0.5">FDEP · ACOE · COUNTY</text>
+    </g>
+
+    <!-- Approval stamp -->
+    <g transform="translate(760 340) rotate(-14)">
+      <circle cx="0" cy="0" r="120" fill="none" stroke="#ff6a5b" stroke-width="8" />
+      <circle cx="0" cy="0" r="95" fill="none" stroke="#ff6a5b" stroke-width="3" />
+      <text x="0" y="-12" font-family="'Fraunces', serif" font-size="34" fill="#ff6a5b" font-weight="900" text-anchor="middle" letter-spacing="4">APPROVED</text>
+      <text x="0" y="20" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#ff6a5b" font-weight="700" text-anchor="middle" letter-spacing="3">HILLSBOROUGH · 2026</text>
+      <path d="M -60 45 L 60 45" stroke="#ff6a5b" stroke-width="2" />
+    </g>
+
+    <!-- Small dock silhouette at bottom -->
+    <g transform="translate(0 490)" fill="#faf5ec" fill-opacity="0.45">
+      <rect x="0" y="20" width="1200" height="6" />
+      <rect x="80" y="0" width="4" height="30" />
+      <rect x="140" y="0" width="4" height="30" />
+      <rect x="200" y="0" width="4" height="30" />
+      <rect x="60" y="-4" width="180" height="6" />
+    </g>
+  <!-- discreet brand mark -->
+  <g transform="translate(1170 610)" opacity="0.7">
+    <text font-family="'Fraunces', serif" font-size="15" fill="#faf5ec" font-weight="700" text-anchor="end">MyDockGuide</text>
+  </g>
+</svg>

@@ -1,0 +1,171 @@
+{
+  "brandTokens": {
+    "teal": "#0c3b46",
+    "tealDark": "#062a34",
+    "aqua": "#3ab7c9",
+    "coral": "#ff6a5b",
+    "sand": "#faf5ec",
+    "sandDeep": "#f0e9d8",
+    "ink": "#0f1b1d",
+    "slate": "#5a6b6f",
+    "sunset": "#e08a3c",
+    "sea": "#3aa681",
+    "gold": "#e5a641",
+    "concrete": "#8a9497"
+  },
+  "guides": {
+    "do-i-need-a-permit-to-build-a-dock-in-tampa-bay": {
+      "shortTitle": "Do I Need a Permit?",
+      "headline": "Do I Need a Permit for a Dock in Tampa Bay?",
+      "eyebrow": "Permits & Regulations",
+      "keyStat": "4 agencies",
+      "keyStatLabel": "Usually involved in one dock",
+      "palette": { "primary": "teal", "secondary": "coral", "accent": "sand" },
+      "icon": "permit",
+      "carouselHook": "Every Tampa dock touches 4 agencies. Here's each one.",
+      "carousel": [
+        { "title": "Do I need a permit?", "body": "Almost always yes. Here's what you're up against." },
+        { "title": "1. Your county building department", "body": "Hillsborough, Pinellas, Manatee, Sarasota, or Pasco. Every dock touches this office." },
+        { "title": "2. FDEP", "body": "Florida DEP reviews docks over sovereign submerged lands. Most private single-family docks get an exemption but still need to file." },
+        { "title": "3. Army Corps of Engineers", "body": "Federal review of navigable waters. Nationwide permits are fast. Individual permits can take a year." },
+        { "title": "4. Your HOA", "body": "Trips up more homeowners than the government does. Check covenants before materials show up on site." }
+      ]
+    },
+    "how-much-does-a-dock-cost-in-tampa-2026": {
+      "shortTitle": "Dock Cost 2026",
+      "headline": "How Much a Dock Actually Costs in Tampa",
+      "eyebrow": "Costs & Budgeting",
+      "keyStat": "$15k",
+      "keyStatLabel": "Median Tampa dock (2026)",
+      "palette": { "primary": "teal", "secondary": "gold", "accent": "sand" },
+      "icon": "money",
+      "carouselHook": "The 2026 Tampa dock cost sample. 200 projects, honest numbers.",
+      "carousel": [
+        { "title": "What a Tampa dock really costs", "body": "Median: $15,000. Range: $750 (dinghy dock) to $65,000 (T-shape with lift and roof)." },
+        { "title": "What moves the price", "body": "Length. Materials. Water depth. Permit fees. Bottom type. Not the builder's ego." },
+        { "title": "Pressure-treated pine", "body": "$28 per sq ft. Cheapest. Lasts 10 to 15 years in salt. Needs sealing." },
+        { "title": "Composite decking", "body": "$55 per sq ft. Zero maintenance. 25-year warranty. Tampa's default since 2019." },
+        { "title": "Ipe hardwood", "body": "$78 per sq ft. Looks like a yacht deck. Lasts 40 years. Priced accordingly." }
+      ]
+    },
+    "floating-vs-fixed-docks-tampa-bay": {
+      "shortTitle": "Floating vs Fixed",
+      "headline": "Floating or Fixed? A Tampa Bay Guide",
+      "eyebrow": "Design & Layout",
+      "keyStat": "3 ft",
+      "keyStatLabel": "Tampa Bay tide swing",
+      "palette": { "primary": "aqua", "secondary": "teal", "accent": "sand" },
+      "icon": "compare",
+      "carouselHook": "Tampa Bay tides swing 3 ft. Here's how that changes your dock decision.",
+      "carousel": [
+        { "title": "Floating vs fixed", "body": "Tampa's tide isn't dramatic, but it's persistent. That changes the math." },
+        { "title": "Fixed docks", "body": "Rigid platform on pilings. Higher cost. Longer life. Better for open Bay exposure." },
+        { "title": "Floating docks", "body": "Rides the tide. Lower cost. Better boat access at low tide. Higher maintenance in salt." },
+        { "title": "Where floating wins", "body": "Canal-front homes. Kayak launches. Docks that see extreme tidal swing." },
+        { "title": "Where fixed wins", "body": "Open Bay exposure. Larger boats. Homes that will resell to boat owners." }
+      ]
+    },
+    "best-dock-materials-saltwater": {
+      "shortTitle": "Dock Materials",
+      "headline": "The Best Dock Materials for Tampa Bay Saltwater",
+      "eyebrow": "Materials & Design",
+      "keyStat": "40 yrs",
+      "keyStatLabel": "Ipe hardwood lifespan",
+      "palette": { "primary": "teal", "secondary": "sea", "accent": "sand" },
+      "icon": "materials",
+      "carouselHook": "Four dock materials, ranked for Tampa Bay saltwater. Real lifespans.",
+      "carousel": [
+        { "title": "What lasts in Tampa salt?", "body": "Not everything. Marketing lies. Here's the real ranking." },
+        { "title": "Pressure-treated pine", "body": "10 to 15 years. Cheapest. Rots. Needs annual sealing. Familiar friend." },
+        { "title": "Composite", "body": "25 to 30 years. Zero maintenance. Modern Tampa default. Trex, Azek, Fiberon." },
+        { "title": "Ipe hardwood", "body": "30 to 50 years. Yacht-grade look. Silvers gracefully. Premium price." },
+        { "title": "Marine aluminum", "body": "40+ years. Won't rot, warp, or splinter. Modern industrial look. Cool underfoot." }
+      ]
+    },
+    "dock-seawall-or-bulkhead": {
+      "shortTitle": "Dock vs Seawall vs Bulkhead",
+      "headline": "Dock, Seawall, or Bulkhead? Which You Actually Need",
+      "eyebrow": "Materials & Design",
+      "keyStat": "3 things",
+      "keyStatLabel": "Often confused",
+      "palette": { "primary": "teal", "secondary": "concrete", "accent": "sand" },
+      "icon": "wall",
+      "carouselHook": "Dock vs seawall vs bulkhead. Not the same thing. Here's the difference.",
+      "carousel": [
+        { "title": "Not the same thing", "body": "Dock, seawall, and bulkhead get mixed up constantly. They do different jobs." },
+        { "title": "Dock", "body": "Access structure. Extends from the shore out over the water. You walk on it." },
+        { "title": "Seawall", "body": "Vertical retaining wall between land and water. Protects your yard from erosion and surge." },
+        { "title": "Bulkhead", "body": "Basically a seawall. In Florida the terms are used interchangeably." },
+        { "title": "The order to build them", "body": "Seawall first, then dock. Building a dock and then failing to seawall the yard is how projects get expensive fast." }
+      ]
+    },
+    "does-adding-a-dock-increase-home-value": {
+      "shortTitle": "Dock ROI",
+      "headline": "Does Adding a Dock Increase Home Value?",
+      "eyebrow": "Home Value & ROI",
+      "keyStat": "60-90%",
+      "keyStatLabel": "ROI on deep-water canals",
+      "palette": { "primary": "teal", "secondary": "gold", "accent": "sea" },
+      "icon": "home",
+      "carouselHook": "Dock ROI in Tampa Bay. What realtors actually pay for a new dock.",
+      "carousel": [
+        { "title": "Does a dock add value?", "body": "In Tampa Bay: yes, mostly. But how much depends entirely on where you are." },
+        { "title": "Deep-water canals", "body": "60% to 90% of dock cost recovered at sale. Sometimes more." },
+        { "title": "Navigable canals with bridges", "body": "40% to 60% recovery. Every draft-restricted canal ranks lower." },
+        { "title": "Waterfront without boat access", "body": "20% to 40% recovery. Build for lifestyle, not resale." },
+        { "title": "The kicker", "body": "A failing dock discounts you more than a new one adds. Fix before you list." }
+      ]
+    },
+    "12-questions-tampa-dock-builder": {
+      "shortTitle": "12 Questions",
+      "headline": "12 Questions Every Tampa Dock Owner Should Ask",
+      "eyebrow": "Hiring & Vetting",
+      "keyStat": "12 Qs",
+      "keyStatLabel": "That expose bad builders",
+      "palette": { "primary": "coral", "secondary": "teal", "accent": "sand" },
+      "icon": "checklist",
+      "carouselHook": "12 questions that separate great Tampa dock builders from the rest.",
+      "carousel": [
+        { "title": "12 questions to ask", "body": "Before you sign anything, these separate the pros from the storm chasers." },
+        { "title": "1. License and insurance", "body": "Ask to see the license number. Verify at MyFloridaLicense.com." },
+        { "title": "2. Local Bay work", "body": "How many Tampa Bay docks in the last 12 months? Get names." },
+        { "title": "3. Permits included?", "body": "Ask specifically whether county, FDEP, and Army Corps fees are in the quote." },
+        { "title": "4. Warranty coverage", "body": "Get the warranty in writing. Ask what's excluded." }
+      ]
+    },
+    "whats-included-vs-excluded-in-a-dock-quote": {
+      "shortTitle": "Quote Breakdown",
+      "headline": "What's Actually Included vs Excluded in a Dock Quote",
+      "eyebrow": "Hiring & Vetting",
+      "keyStat": "12 items",
+      "keyStatLabel": "Commonly hidden",
+      "palette": { "primary": "teal", "secondary": "coral", "accent": "sand" },
+      "icon": "receipt",
+      "carouselHook": "12 dock quote line items builders quietly leave out. Know them before signing.",
+      "carousel": [
+        { "title": "What's really in a quote?", "body": "The headline number is not the total. Here's what to double-check." },
+        { "title": "Survey fees", "body": "$800 to $2,500. Rarely included. Ask specifically." },
+        { "title": "Permit fees", "body": "$1,500 to $3,000 across agencies. Some builders quote without." },
+        { "title": "Electrical", "body": "Outlet, lighting, panel run. $2k to $5k. Almost always separate." },
+        { "title": "Removal of old dock", "body": "$40 to $80 per linear foot. Not always priced in." }
+      ]
+    },
+    "ready-to-build-get-quotes": {
+      "shortTitle": "Ready to Build",
+      "headline": "You're Ready to Build. Now What?",
+      "eyebrow": "Getting Started",
+      "keyStat": "3 quotes",
+      "keyStatLabel": "The right number to compare",
+      "palette": { "primary": "coral", "secondary": "sea", "accent": "sand" },
+      "icon": "start",
+      "carouselHook": "Ready to build a Tampa dock? Here's the 5-step plan.",
+      "carousel": [
+        { "title": "You're ready to build", "body": "Great. Here's the 5-step plan to get quotes and pick a builder without getting burned." },
+        { "title": "Step 1: know your spec", "body": "Size, materials, add-ons. Use our cost calculator to lock a range first." },
+        { "title": "Step 2: get 3 quotes", "body": "Not 2. Not 10. Three is the number that surfaces outliers on both ends." },
+        { "title": "Step 3: verify licenses", "body": "MyFloridaLicense.com is free. Skip this and pay 10x later." },
+        { "title": "Step 4: read the contract", "body": "Deposit, milestones, warranty. If it's not in writing, it doesn't exist." }
+      ]
+    }
+  }
+}

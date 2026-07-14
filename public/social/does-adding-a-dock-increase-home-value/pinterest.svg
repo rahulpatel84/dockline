@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1500" role="img" aria-label="Does Adding a Dock Increase Home Value?">
+  <rect width="1000" height="1500" fill="#062a34" />
+  <!-- top: scene inside a card -->
+  <g transform="translate(40 130)">
+    <clipPath id="pinclip-does-adding-a-dock-increase-home-value">
+      <rect x="0" y="0" width="920" height="720" rx="26" />
+    </clipPath>
+    <g clip-path="url(#pinclip-does-adding-a-dock-increase-home-value)">
+      <g transform="translate(0 -70) scale(0.77 1.4)">
+    <rect width="1200" height="630" fill="#062a34" />
+    
+  <circle cx="180" cy="130" r="120" fill="#e5a641" fill-opacity="0.35" />
+  <circle cx="180" cy="130" r="84" fill="#e5a641" fill-opacity="0.55" />
+  <circle cx="180" cy="130" r="48" fill="#e5a641" fill-opacity="0.85" />
+
+    <!-- Water bottom -->
+    <rect x="0" y="410" width="1200" height="220" fill="#0c3b46" fill-opacity="0.35" />
+    
+  <g fill="#3aa681" fill-opacity="0.15">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#3aa681" fill-opacity="0.09">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- House on left -->
+    <g transform="translate(150 180)">
+      <!-- roof -->
+      <path d="M 0 0 L 120 -80 L 240 0 Z" fill="#3aa681" />
+      <!-- body -->
+      <rect x="0" y="0" width="240" height="200" fill="#3aa681" fill-opacity="0.92" />
+      <!-- door -->
+      <rect x="95" y="120" width="50" height="80" fill="#0c3b46" />
+      <circle cx="135" cy="160" r="3" fill="#ff6a5b" />
+      <!-- windows -->
+      <rect x="20" y="30" width="55" height="55" fill="#0c3b46" />
+      <line x1="47" y1="30" x2="47" y2="85" stroke="#3aa681" stroke-width="2" />
+      <line x1="20" y1="57" x2="75" y2="57" stroke="#3aa681" stroke-width="2" />
+      <rect x="165" y="30" width="55" height="55" fill="#0c3b46" />
+      <line x1="192" y1="30" x2="192" y2="85" stroke="#3aa681" stroke-width="2" />
+      <line x1="165" y1="57" x2="220" y2="57" stroke="#3aa681" stroke-width="2" />
+    </g>
+
+    <!-- Dock extending right from house -->
+    <g>
+      <rect x="380" y="395" width="500" height="20" fill="#3aa681" />
+      <rect x="410" y="415" width="6" height="60" fill="#0f1b1d" fill-opacity="0.6" />
+      <rect x="510" y="415" width="6" height="60" fill="#0f1b1d" fill-opacity="0.6" />
+      <rect x="610" y="415" width="6" height="60" fill="#0f1b1d" fill-opacity="0.6" />
+      <rect x="710" y="415" width="6" height="60" fill="#0f1b1d" fill-opacity="0.6" />
+      <rect x="810" y="415" width="6" height="60" fill="#0f1b1d" fill-opacity="0.6" />
+      <rect x="870" y="415" width="6" height="60" fill="#0f1b1d" fill-opacity="0.6" />
+      <!-- Boat at end -->
+      <g transform="translate(830 355)">
+        <path d="M 0 30 Q 40 60 100 30 L 90 40 L 10 40 Z" fill="#ff6a5b" />
+        <rect x="20" y="10" width="60" height="20" rx="3" fill="#3aa681" />
+        <rect x="35" y="-15" width="10" height="25" fill="#0f1b1d" fill-opacity="0.6" />
+      </g>
+    </g>
+
+    <!-- Ascending value arrow (big) -->
+    <g transform="translate(960 100)">
+      <!-- bars ascending -->
+      <g fill="#3aa681">
+        <rect x="0" y="220" width="40" height="80" />
+        <rect x="55" y="180" width="40" height="120" />
+        <rect x="110" y="120" width="40" height="180" />
+        <rect x="165" y="50" width="40" height="250" />
+      </g>
+      <!-- arrow going up-right through bars -->
+      <path d="M 5 265 L 205 40" stroke="#ff6a5b" stroke-width="8" fill="none" stroke-linecap="round" />
+      <path d="M 205 40 L 175 40 L 205 40 L 205 70" stroke="#ff6a5b" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <polygon points="205,40 175,40 195,10 235,50 205,70" fill="#ff6a5b" />
+    </g>
+
+    <!-- Dollar sign floating -->
+    <g transform="translate(1000 380)">
+      <circle r="42" fill="#ff6a5b" />
+      <text y="15" font-family="'Fraunces', serif" font-size="52" fill="#062a34" font-weight="900" text-anchor="middle">$</text>
+    </g></g>
+    </g>
+  </g>
+  <!-- caption band -->
+  <g transform="translate(40 920)">
+    <text font-family="'Hanken Grotesk', sans-serif" font-size="26" fill="#3aa681" fill-opacity="0.75" letter-spacing="6" font-weight="700">HOME VALUE &amp; ROI</text>
+    <text y="60" font-family="'Fraunces', serif" font-size="64" fill="#3aa681" font-weight="700">
+      <tspan x="0" dy="0">Does Adding a Dock</tspan><tspan x="0" dy="72">Increase Home Value?</tspan>
+    </text>
+  </g>
+  <g transform="translate(40 1350)">
+    <rect width="250" height="70" rx="35" fill="#ff6a5b" />
+    <text x="125" y="47" font-family="'Fraunces', serif" font-size="24" fill="#062a34" font-weight="900" text-anchor="middle">Save + Read</text>
+  </g>
+  <text x="960" y="1470" font-family="'Fraunces', serif" font-size="24" fill="#3aa681" fill-opacity="0.75" font-weight="700" text-anchor="end">MyDockGuide</text>
+</svg>

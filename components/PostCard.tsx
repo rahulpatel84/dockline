@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ThumbSVG } from "./ThumbSVG";
+import { coverPath, hasCover } from "@/lib/guide-covers";
 
 type Post = {
   slug: string;
@@ -16,10 +17,22 @@ const pillFor = { aware: "aware", consider: "consider", decide: "decide" } as co
 
 export function PostCard({ post }: { post: Post }) {
   const href = post.externalLink || `/guides/${post.slug}`;
+  const useCover = hasCover(post.slug);
   return (
     <Link href={href} className="post">
       <div className="thumb">
-        <ThumbSVG stage={post.stage} />
+        {useCover ? (
+          <img
+            src={coverPath(post.slug)}
+            alt={post.title}
+            loading="lazy"
+            width={1200}
+            height={630}
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+        ) : (
+          <ThumbSVG stage={post.stage} />
+        )}
       </div>
       <div className="body">
         <span className={`pill ${pillFor[post.stage]}`}>

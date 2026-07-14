@@ -22,25 +22,36 @@ export function Footer() {
               <span
                 className="dot"
                 style={{
-                  width: 30,
-                  height: 30,
+                  width: 32,
+                  height: 32,
                   borderRadius: 9,
-                  background: "linear-gradient(135deg,var(--teal),var(--aqua))",
+                  background: "linear-gradient(135deg,var(--teal),var(--ocean))",
                   display: "inline-grid",
                   placeItems: "center",
                   verticalAlign: "middle",
-                  marginRight: 8,
+                  marginRight: 10,
                 }}
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2} style={{ width: 18, height: 18 }}>
-                  <path d="M3 18h18M5 18v-7l7-4 7 4v7" />
+                <svg viewBox="0 0 40 40" fill="none" style={{ width: 22, height: 22 }} aria-hidden="true">
+                  <defs>
+                    <linearGradient id="mdg-foot-water" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#6fc5bc" />
+                      <stop offset="100%" stopColor="#15808f" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M4 30 Q 10 26 16 30 T 28 30 T 40 30 L 40 40 L 4 40 Z" fill="url(#mdg-foot-water)" opacity="0.9" />
+                  <rect x="6" y="24" width="28" height="3" rx="1" fill="#fff" />
+                  <rect x="9" y="24" width="2" height="10" fill="#fff" opacity="0.9" />
+                  <rect x="19" y="24" width="2" height="10" fill="#fff" opacity="0.9" />
+                  <rect x="29" y="24" width="2" height="10" fill="#fff" opacity="0.9" />
+                  <circle cx="30" cy="12" r="4" fill="#fff" opacity="0.95" />
                 </svg>
               </span>
               {site.shortName}
             </div>
             <p className="blurb">
-              Tampa Bay&apos;s independent guide to docks, seawalls &amp; boat lifts — and the licensed builders who
-              make them.
+              Tampa Bay&apos;s independent guide to docks, seawalls, and boat lifts. Plus the licensed builders who
+              actually make them.
             </p>
             <address
               className="foot-address"
@@ -78,23 +89,31 @@ export function Footer() {
           <div>
             <h5>For owners</h5>
             <Link href="/quote">Get 3 free quotes</Link>
-            <Link href="/directory">Find a builder</Link>
+            <Link href="/tools/dock-cost">Dock cost calculator</Link>
+            <Link href="/tools">All tools</Link>
             <Link href="/guides">Free planning kit</Link>
-            <Link href="/guides">Cost calculator</Link>
           </div>
           <div>
-            <h5>For builders</h5>
-            <Link href="/directory">List your business</Link>
-            <Link href="/directory">Buy leads</Link>
-            <Link href="/directory">Featured placement</Link>
-            <a href={`mailto:${site.contact?.email}`}>Contact us</a>
+            <h5>Company</h5>
+            <Link href="/about">About</Link>
+            <Link href="/newsletter">Newsletter</Link>
+            <a href={`mailto:${site.contact?.email}`}>Contact</a>
+            <a href={`mailto:${site.contact?.email}?subject=Builder%20partnership`}>Builder partnerships</a>
           </div>
         </div>
         <div className="foot-bot">
           <span>
             © {year} {site.name}. Serving Tampa, Hillsborough, Pinellas, St. Petersburg, Clearwater &amp; Apollo Beach.
           </span>
-          <span>Privacy · Terms · Builder Agreement</span>
+          <span className="foot-legal">
+            <Link href="/privacy">Privacy</Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/terms">Terms</Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/builder-agreement">Builder agreement</Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/sitemap-page">Sitemap</Link>
+          </span>
         </div>
       </div>
     </footer>

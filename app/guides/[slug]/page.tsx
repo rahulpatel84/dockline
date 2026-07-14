@@ -7,6 +7,7 @@ import { ArticleBody } from "@/components/ArticleBody";
 import { PostCard } from "@/components/PostCard";
 import { JsonLd } from "@/components/JsonLd";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
+import { coverPath, hasCover } from "@/lib/guide-covers";
 
 type Post = (typeof posts)[number];
 
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = findPost(slug);
   if (!p) return {};
   const url = `/guides/${p.slug}`;
+  const image = hasCover(p.slug) ? coverPath(p.slug) : site.ogImage;
   return {
     title: p.title,
     description: p.description,
@@ -39,13 +41,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       modifiedTime: p.updatedAt || p.publishedAt,
       authors: [p.author],
       section: p.category,
-      images: [{ url: site.ogImage, width: 1200, height: 630, alt: p.title }],
+      images: [{ url: image, width: 1200, height: 630, alt: p.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: p.title,
       description: p.description,
-      images: [site.ogImage],
+      images: [image],
     },
   };
 }
@@ -111,6 +113,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             · {post.readTime} read
           </div>
         </div>
+
+        {hasCover(post.slug) && (
+          <figure className="article-cover">
+            <img
+              src={coverPath(post.slug)}
+              alt={post.title}
+              width={1200}
+              height={630}
+              loading="eager"
+            />
+          </figure>
+        )}
 
         <ArticleBody blocks={post.body as Parameters<typeof ArticleBody>[0]["blocks"]} />
       </article>

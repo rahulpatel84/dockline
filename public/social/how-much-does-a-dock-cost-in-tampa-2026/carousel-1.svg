@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="How Much a Dock Actually Costs in Tampa">
+  <rect width="1080" height="1080" fill="#062a34" />
+  <!-- scene fills top 700 -->
+  <clipPath id="csclip-how-much-does-a-dock-cost-in-tampa-2026-0">
+    <rect x="60" y="60" width="960" height="640" rx="26" />
+  </clipPath>
+  <g clip-path="url(#csclip-how-much-does-a-dock-cost-in-tampa-2026-0)">
+    <g transform="translate(60 0) scale(0.8 1.14)">
+    <rect width="1200" height="630" fill="#062a34" />
+    
+  <circle cx="180" cy="130" r="130" fill="#e5a641" fill-opacity="0.35" />
+  <circle cx="180" cy="130" r="91" fill="#e5a641" fill-opacity="0.55" />
+  <circle cx="180" cy="130" r="52" fill="#e5a641" fill-opacity="0.85" />
+    
+  <g fill="#faf5ec" fill-opacity="0.2">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.12">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- Sky glow -->
+    <ellipse cx="600" cy="100" rx="600" ry="150" fill="#e5a641" fill-opacity="0.15" />
+
+    <!-- Big dock in perspective -->
+    <g>
+      <!-- deck boards receding -->
+      <path d="M 250 380 L 950 380 L 850 420 L 350 420 Z" fill="#faf5ec" fill-opacity="0.9" />
+      <path d="M 250 380 L 950 380 L 950 385 L 250 385 Z" fill="#0f1b1d" fill-opacity="0.15" />
+      <line x1="330" y1="380" x2="360" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="410" y1="380" x2="430" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="490" y1="380" x2="500" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="570" y1="380" x2="575" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="650" y1="380" x2="650" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="730" y1="380" x2="720" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="810" y1="380" x2="795" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <line x1="890" y1="380" x2="870" y2="420" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="2" />
+      <!-- pilings -->
+      <rect x="320" y="385" width="12" height="150" fill="#0f1b1d" fill-opacity="0.55" />
+      <rect x="480" y="385" width="12" height="150" fill="#0f1b1d" fill-opacity="0.55" />
+      <rect x="640" y="385" width="12" height="150" fill="#0f1b1d" fill-opacity="0.55" />
+      <rect x="800" y="385" width="12" height="150" fill="#0f1b1d" fill-opacity="0.55" />
+      <rect x="920" y="385" width="10" height="150" fill="#0f1b1d" fill-opacity="0.55" />
+    </g>
+
+    <!-- Hanging price tag -->
+    <g transform="translate(730 100)">
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#faf5ec" stroke-width="3" />
+      <g transform="translate(-140 60) rotate(-6)">
+        <path d="M 0 0 L 200 0 L 240 60 L 200 120 L 0 120 Z" fill="#ff6a5b" />
+        <circle cx="20" cy="60" r="10" fill="#062a34" />
+        <text x="130" y="55" font-family="'Fraunces', serif" font-size="42" fill="#062a34" font-weight="900" text-anchor="middle">$15k</text>
+        <text x="130" y="88" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#062a34" font-weight="700" text-anchor="middle" letter-spacing="2">MEDIAN</text>
+      </g>
+    </g>
+
+    <!-- Coin stack -->
+    <g transform="translate(1000 400)">
+      <ellipse cx="0" cy="120" rx="80" ry="15" fill="#ff6a5b" />
+      <rect x="-80" y="90" width="160" height="30" fill="#ff6a5b" />
+      <ellipse cx="0" cy="90" rx="80" ry="15" fill="#e5a641" />
+      <rect x="-75" y="65" width="150" height="25" fill="#e5a641" />
+      <ellipse cx="0" cy="65" rx="75" ry="14" fill="#ff6a5b" />
+      <rect x="-70" y="42" width="140" height="23" fill="#ff6a5b" />
+      <ellipse cx="0" cy="42" rx="70" ry="13" fill="#e5a641" />
+      <text x="0" y="50" font-family="'Fraunces', serif" font-size="28" fill="#062a34" font-weight="900" text-anchor="middle">$</text>
+    </g></g>
+  </g>
+  <!-- caption -->
+  <g transform="translate(60 770)">
+    <text font-family="'Hanken Grotesk', sans-serif" font-size="22" fill="#faf5ec" fill-opacity="0.75" letter-spacing="5" font-weight="700">COSTS &amp; BUDGETING</text>
+    <text y="60" font-family="'Fraunces', serif" font-size="56" fill="#faf5ec" font-weight="700">
+      <tspan x="0" dy="0">How Much a Dock</tspan><tspan x="0" dy="62">Actually Costs in</tspan><tspan x="0" dy="62">Tampa</tspan>
+    </text>
+  </g>
+  <text x="90" y="1030" font-family="'Hanken Grotesk', sans-serif" font-size="20" fill="#faf5ec" fill-opacity="0.7" font-weight="700">Swipe →</text>
+  <text x="990" y="1030" font-family="'Fraunces', serif" font-size="22" fill="#faf5ec" fill-opacity="0.75" font-weight="700" text-anchor="end">MyDockGuide</text>
+</svg>

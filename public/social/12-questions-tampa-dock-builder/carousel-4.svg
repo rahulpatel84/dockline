@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="3. Permits included?">
+  <rect width="1080" height="1080" fill="#faf5ec" />
+  <!-- soft scene backdrop (faded) -->
+  <g opacity="0.15">
+    <clipPath id="csbg-12-questions-tampa-dock-builder-3">
+      <rect x="0" y="0" width="1080" height="1080" />
+    </clipPath>
+    <g clip-path="url(#csbg-12-questions-tampa-dock-builder-3)">
+      <g transform="translate(0 200) scale(0.9 1.4)">
+    <rect width="1200" height="630" fill="#062a34" />
+    
+  <circle cx="1050" cy="100" r="120" fill="#0c3b46" fill-opacity="0.35" />
+  <circle cx="1050" cy="100" r="84" fill="#0c3b46" fill-opacity="0.55" />
+  <circle cx="1050" cy="100" r="48" fill="#0c3b46" fill-opacity="0.85" />
+    
+  <g fill="#faf5ec" fill-opacity="0.12">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.072">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- Big clipboard, slightly tilted -->
+    <g transform="translate(220 60) rotate(-4)">
+      <!-- clipboard back -->
+      <rect x="0" y="0" width="580" height="540" rx="12" fill="#8a5a35" />
+      <rect x="0" y="0" width="580" height="540" rx="12" fill="#0f1b1d" fill-opacity="0.1" />
+      <!-- clip -->
+      <rect x="220" y="-25" width="140" height="50" rx="10" fill="#0f1b1d" fill-opacity="0.55" />
+      <rect x="240" y="-30" width="100" height="20" rx="6" fill="#0f1b1d" fill-opacity="0.8" />
+      <!-- paper -->
+      <rect x="20" y="30" width="540" height="490" fill="#faf5ec" />
+
+      <!-- title -->
+      <text x="50" y="80" font-family="'Fraunces', serif" font-size="26" fill="#062a34" font-weight="900">Vetting checklist</text>
+      <line x1="50" y1="95" x2="180" y2="95" stroke="#ff6a5b" stroke-width="4" />
+
+      <!-- checklist rows -->
+      
+            <g>
+              <text x="18" y="140" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">1</text>
+              <g><rect x="50" y="120" width="28" height="28" rx="4" fill="#ff6a5b" /><path d="M 56 135 l 8 8 l 12 -14" stroke="#faf5ec" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" /></g>
+              <text x="95" y="140" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">Licensed marine contractor?</text>
+            </g>
+            <g>
+              <text x="18" y="192" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">2</text>
+              <g><rect x="50" y="172" width="28" height="28" rx="4" fill="#ff6a5b" /><path d="M 56 187 l 8 8 l 12 -14" stroke="#faf5ec" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" /></g>
+              <text x="95" y="192" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">12 mo Tampa Bay project count</text>
+            </g>
+            <g>
+              <text x="18" y="244" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">3</text>
+              <g><rect x="50" y="224" width="28" height="28" rx="4" fill="#ff6a5b" /><path d="M 56 239 l 8 8 l 12 -14" stroke="#faf5ec" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" /></g>
+              <text x="95" y="244" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">Three references in your ZIP</text>
+            </g>
+            <g>
+              <text x="18" y="296" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">4</text>
+              <rect x="50" y="276" width="28" height="28" rx="4" fill="none" stroke="#0f1b1d" stroke-width="2.5" />
+              <text x="95" y="296" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">Line-item quote in writing</text>
+            </g>
+            <g>
+              <text x="18" y="348" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">5</text>
+              <g><rect x="50" y="328" width="28" height="28" rx="4" fill="#ff6a5b" /><path d="M 56 343 l 8 8 l 12 -14" stroke="#faf5ec" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" /></g>
+              <text x="95" y="348" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">316 stainless fasteners</text>
+            </g>
+            <g>
+              <text x="18" y="400" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">6</text>
+              <rect x="50" y="380" width="28" height="28" rx="4" fill="none" stroke="#0f1b1d" stroke-width="2.5" />
+              <text x="95" y="400" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">Concrete pilings for lift</text>
+            </g>
+            <g>
+              <text x="18" y="452" font-family="'Fraunces', serif" font-size="20" fill="#ff6a5b" font-weight="800">7</text>
+              <g><rect x="50" y="432" width="28" height="28" rx="4" fill="#ff6a5b" /><path d="M 56 447 l 8 8 l 12 -14" stroke="#faf5ec" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" /></g>
+              <text x="95" y="452" font-family="'Hanken Grotesk', sans-serif" font-size="18" fill="#062a34" fill-opacity="0.85">Permits included in scope</text>
+            </g>
+    </g>
+
+    <!-- Pen -->
+    <g transform="translate(880 380) rotate(30)">
+      <rect x="0" y="0" width="180" height="16" rx="4" fill="#ff6a5b" />
+      <path d="M 0 0 L -22 8 L 0 16 Z" fill="#0f1b1d" fill-opacity="0.85" />
+      <rect x="150" y="0" width="30" height="16" rx="4" fill="#0c3b46" />
+    </g>
+
+    <!-- Big question mark -->
+    <g transform="translate(920 140)" opacity="0.75">
+      <circle r="55" fill="#ff6a5b" fill-opacity="0.9" />
+      <text y="22" font-family="'Fraunces', serif" font-size="80" fill="#062a34" font-weight="900" text-anchor="middle">?</text>
+    </g></g>
+    </g>
+  </g>
+
+  <!-- Big number pill -->
+  <g transform="translate(80 100)">
+    <circle cx="80" cy="80" r="80" fill="#ff6a5b" />
+    <text x="80" y="105" font-family="'Fraunces', serif" font-size="80" fill="#faf5ec" font-weight="900" text-anchor="middle">3</text>
+  </g>
+  <text x="240" y="150" font-family="'Hanken Grotesk', sans-serif" font-size="22" fill="#ff6a5b" fill-opacity="0.75" letter-spacing="5" font-weight="700">3 / 4</text>
+  <text x="240" y="195" font-family="'Fraunces', serif" font-size="34" fill="#ff6a5b" font-weight="700">Hiring &amp; Vetting</text>
+
+  <!-- Title -->
+  <text x="80" y="370" font-family="'Fraunces', serif" font-size="70" fill="#ff6a5b" font-weight="700">
+    <tspan x="80" dy="0">3. Permits included?</tspan>
+  </text>
+
+  <!-- Body -->
+  <text x="80" y="720" font-family="'Hanken Grotesk', sans-serif" font-size="32" fill="#ff6a5b" fill-opacity="0.75" font-weight="500">
+    <tspan x="80" dy="0">Ask specifically whether county,</tspan><tspan x="80" dy="44">FDEP, and Army Corps fees are in</tspan><tspan x="80" dy="44">the quote.</tspan>
+  </text>
+
+  <line x1="80" y1="960" x2="1000" y2="960" stroke="#ff6a5b" stroke-opacity="0.25" stroke-width="2" />
+  <text x="80" y="1010" font-family="'Hanken Grotesk', sans-serif" font-size="22" fill="#ff6a5b" fill-opacity="0.7" font-weight="700">Keep swiping →</text>
+  <text x="1000" y="1010" font-family="'Fraunces', serif" font-size="24" fill="#ff6a5b" font-weight="700" text-anchor="end">MyDockGuide</text>
+</svg>

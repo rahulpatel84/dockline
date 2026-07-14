@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="The Best Dock Materials for Tampa Bay Saltwater">
+  
+    <rect width="1200" height="630" fill="#062a34" />
+    
+  <circle cx="1050" cy="100" r="100" fill="#3aa681" fill-opacity="0.35" />
+  <circle cx="1050" cy="100" r="70" fill="#3aa681" fill-opacity="0.55" />
+  <circle cx="1050" cy="100" r="40" fill="#3aa681" fill-opacity="0.85" />
+    
+  <g fill="#faf5ec" fill-opacity="0.1">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.06">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- Header ribbon -->
+    <g transform="translate(60 40)">
+      <text font-family="'Fraunces', serif" font-size="32" fill="#faf5ec" font-weight="900" letter-spacing="1">4 Materials</text>
+      <text y="30" font-family="'Hanken Grotesk', sans-serif" font-size="16" fill="#faf5ec" fill-opacity="0.7" letter-spacing="3">TAMPA BAY SALTWATER TESTED</text>
+    </g>
+
+    
+        <g transform="translate(60 130)">
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="#a97a4c" />
+          <g>
+            <path d="M 40 20 Q 200 15 400 22 T 800 20" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="1.5" fill="none" />
+            <path d="M 60 40 Q 200 36 400 42 T 800 40" stroke="#0f1b1d" stroke-opacity="0.25" stroke-width="1" fill="none" />
+            <path d="M 100 60 Q 260 56 440 62 T 800 58" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" fill="none" /></g>
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="none" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" />
+          <!-- side label -->
+          <g transform="translate(920 20)">
+            <text font-family="'Fraunces', serif" font-size="18" fill="#faf5ec" font-weight="800">PRESSURE-TREATED</text>
+            <text y="26" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#faf5ec" fill-opacity="0.75">$28/sqft · 10-15 yrs</text>
+          </g>
+        </g>
+        <g transform="translate(60 235)">
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="#8a9a8e" />
+          <g><circle cx="40" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="60" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="80" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="100" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="120" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="140" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="160" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="180" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="200" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="220" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="240" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="260" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="280" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="300" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="320" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="340" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="360" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="380" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="400" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="420" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="440" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="460" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="480" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="500" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="520" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="540" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="560" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="580" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="600" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="620" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="640" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="660" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="680" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="700" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="720" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="740" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="760" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="780" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="800" cy="15" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /><circle cx="40" cy="35" r="1.6" fill="#0f1b1d" fill-opacity="0.3" /></g>
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="none" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" />
+          <!-- side label -->
+          <g transform="translate(920 20)">
+            <text font-family="'Fraunces', serif" font-size="18" fill="#faf5ec" font-weight="800">COMPOSITE</text>
+            <text y="26" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#faf5ec" fill-opacity="0.75">$55/sqft · 25-30 yrs</text>
+          </g>
+        </g>
+        <g transform="translate(60 340)">
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="#6b3820" />
+          <g>
+            <path d="M 40 25 Q 300 40 800 20" stroke="#0f1b1d" stroke-opacity="0.35" stroke-width="2" fill="none" />
+            <path d="M 40 50 Q 400 30 800 55" stroke="#0f1b1d" stroke-opacity="0.25" stroke-width="1.5" fill="none" />
+            <path d="M 40 70 Q 250 60 800 75" stroke="#0f1b1d" stroke-opacity="0.3" stroke-width="1.5" fill="none" /></g>
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="none" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" />
+          <!-- side label -->
+          <g transform="translate(920 20)">
+            <text font-family="'Fraunces', serif" font-size="18" fill="#faf5ec" font-weight="800">IPE HARDWOOD</text>
+            <text y="26" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#faf5ec" fill-opacity="0.75">$78/sqft · 40+ yrs</text>
+          </g>
+        </g>
+        <g transform="translate(60 445)">
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="#b5c1c5" />
+          <g><line x1="50" y1="10" x2="50" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="100" y1="10" x2="100" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="150" y1="10" x2="150" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="200" y1="10" x2="200" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="250" y1="10" x2="250" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="300" y1="10" x2="300" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="350" y1="10" x2="350" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="400" y1="10" x2="400" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="450" y1="10" x2="450" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="500" y1="10" x2="500" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="550" y1="10" x2="550" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="600" y1="10" x2="600" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="650" y1="10" x2="650" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="700" y1="10" x2="700" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /><line x1="750" y1="10" x2="750" y2="80" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" /></g>
+          <rect x="0" y="0" width="880" height="88" rx="6" fill="none" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1" />
+          <!-- side label -->
+          <g transform="translate(920 20)">
+            <text font-family="'Fraunces', serif" font-size="18" fill="#faf5ec" font-weight="800">ALUMINUM</text>
+            <text y="26" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#faf5ec" fill-opacity="0.75">$62/sqft · 40+ yrs</text>
+          </g>
+        </g>
+  <!-- discreet brand mark -->
+  <g transform="translate(1170 610)" opacity="0.7">
+    <text font-family="'Fraunces', serif" font-size="15" fill="#faf5ec" font-weight="700" text-anchor="end">MyDockGuide</text>
+  </g>
+</svg>

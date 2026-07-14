@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Seawall">
+  <rect width="1080" height="1080" fill="#faf5ec" />
+  <!-- soft scene backdrop (faded) -->
+  <g opacity="0.15">
+    <clipPath id="csbg-dock-seawall-or-bulkhead-2">
+      <rect x="0" y="0" width="1080" height="1080" />
+    </clipPath>
+    <g clip-path="url(#csbg-dock-seawall-or-bulkhead-2)">
+      <g transform="translate(0 200) scale(0.9 1.4)">
+    <rect width="1200" height="630" fill="#062a34" />
+    <!-- sky -->
+    <rect x="0" y="0" width="1200" height="200" fill="#8a9497" fill-opacity="0.25" />
+
+    <!-- ground level line -->
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#faf5ec" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4 6" />
+
+    <!-- LAND (left half) -->
+    <g>
+      <path d="M 0 200 L 600 200 L 600 470 L 0 470 Z" fill="#8a5a35" fill-opacity="0.9" />
+      <!-- grass -->
+      <rect x="0" y="195" width="600" height="8" fill="#3aa681" />
+      <!-- soil layers -->
+      <path d="M 0 240 L 600 240" stroke="#0f1b1d" stroke-opacity="0.15" stroke-width="1" />
+      <path d="M 0 300 L 600 300" stroke="#0f1b1d" stroke-opacity="0.15" stroke-width="1" />
+      <path d="M 0 380 L 600 380" stroke="#0f1b1d" stroke-opacity="0.15" stroke-width="1" />
+      <!-- pebbles -->
+      <g fill="#0f1b1d" fill-opacity="0.25">
+        <circle cx="80" cy="260" r="4" />
+        <circle cx="200" cy="330" r="5" />
+        <circle cx="350" cy="410" r="4" />
+        <circle cx="480" cy="360" r="6" />
+        <circle cx="150" cy="440" r="3" />
+      </g>
+
+      <!-- house on land -->
+      <g transform="translate(100 130)">
+        <path d="M 0 0 L 60 -50 L 120 0 L 120 65 L 0 65 Z" fill="#faf5ec" fill-opacity="0.9" />
+        <rect x="45" y="30" width="30" height="35" fill="#0c3b46" />
+        <rect x="10" y="10" width="25" height="18" fill="#0c3b46" fill-opacity="0.6" />
+        <rect x="85" y="10" width="25" height="18" fill="#0c3b46" fill-opacity="0.6" />
+      </g>
+    </g>
+
+    <!-- SEAWALL (vertical wall) -->
+    <g>
+      <!-- vinyl panels -->
+      <g fill="#faf5ec" stroke="#0f1b1d" stroke-opacity="0.2" stroke-width="1.5">
+        <rect x="600" y="180" width="20" height="290" />
+        <rect x="620" y="180" width="20" height="290" />
+        <rect x="640" y="180" width="20" height="290" />
+        <rect x="660" y="180" width="20" height="290" />
+      </g>
+      <!-- cap on top -->
+      <rect x="590" y="170" width="100" height="22" fill="#8a9497" />
+      <!-- tieback lines -->
+      <g stroke="#ff6a5b" stroke-width="3">
+        <line x1="600" y1="230" x2="440" y2="290" />
+        <circle cx="440" cy="290" r="8" fill="#ff6a5b" />
+        <line x1="600" y1="280" x2="440" y2="340" />
+        <circle cx="440" cy="340" r="8" fill="#ff6a5b" />
+      </g>
+      <text x="450" y="270" font-family="'Hanken Grotesk', sans-serif" font-size="13" fill="#ff6a5b" font-weight="700">TIEBACKS</text>
+    </g>
+
+    <!-- WATER (right half) -->
+    <g>
+      <path d="M 690 200 L 1200 200 L 1200 630 L 690 630 Z" fill="#0c3b46" fill-opacity="0.5" />
+      
+  <g fill="#faf5ec" fill-opacity="0.25">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.15">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+      <!-- fish -->
+      <g transform="translate(900 380)" fill="#faf5ec" fill-opacity="0.7">
+        <path d="M 0 0 Q 20 -8 40 0 Q 20 8 0 0 Z" />
+        <path d="M -8 0 L -18 -8 L -18 8 Z" />
+        <circle cx="30" cy="-2" r="2" fill="#062a34" />
+      </g>
+      <!-- water depth arrows -->
+      <g stroke="#faf5ec" stroke-opacity="0.4" stroke-width="2">
+        <line x1="1100" y1="220" x2="1100" y2="450" />
+        <path d="M 1094 220 L 1100 210 L 1106 220" fill="#faf5ec" fill-opacity="0.5" />
+        <path d="M 1094 450 L 1100 460 L 1106 450" fill="#faf5ec" fill-opacity="0.5" />
+      </g>
+      <text x="1130" y="340" font-family="'Fraunces', serif" font-size="18" fill="#faf5ec" font-weight="700">6 ft</text>
+    </g>
+
+    <!-- CAP label -->
+    <text x="695" y="163" font-family="'Hanken Grotesk', sans-serif" font-size="13" fill="#8a9497" font-weight="700">CAP</text></g>
+    </g>
+  </g>
+
+  <!-- Big number pill -->
+  <g transform="translate(80 100)">
+    <circle cx="80" cy="80" r="80" fill="#0c3b46" />
+    <text x="80" y="105" font-family="'Fraunces', serif" font-size="80" fill="#faf5ec" font-weight="900" text-anchor="middle">2</text>
+  </g>
+  <text x="240" y="150" font-family="'Hanken Grotesk', sans-serif" font-size="22" fill="#0c3b46" fill-opacity="0.75" letter-spacing="5" font-weight="700">2 / 4</text>
+  <text x="240" y="195" font-family="'Fraunces', serif" font-size="34" fill="#0c3b46" font-weight="700">Materials &amp; Design</text>
+
+  <!-- Title -->
+  <text x="80" y="370" font-family="'Fraunces', serif" font-size="70" fill="#0c3b46" font-weight="700">
+    <tspan x="80" dy="0">Seawall</tspan>
+  </text>
+
+  <!-- Body -->
+  <text x="80" y="720" font-family="'Hanken Grotesk', sans-serif" font-size="32" fill="#0c3b46" fill-opacity="0.75" font-weight="500">
+    <tspan x="80" dy="0">Vertical retaining wall between</tspan><tspan x="80" dy="44">land and water. Protects your</tspan><tspan x="80" dy="44">yard from erosion and surge.</tspan>
+  </text>
+
+  <line x1="80" y1="960" x2="1000" y2="960" stroke="#0c3b46" stroke-opacity="0.25" stroke-width="2" />
+  <text x="80" y="1010" font-family="'Hanken Grotesk', sans-serif" font-size="22" fill="#0c3b46" fill-opacity="0.7" font-weight="700">Keep swiping →</text>
+  <text x="1000" y="1010" font-family="'Fraunces', serif" font-size="24" fill="#0c3b46" font-weight="700" text-anchor="end">MyDockGuide</text>
+</svg>

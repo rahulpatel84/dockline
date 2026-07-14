@@ -7,12 +7,8 @@ import { useEffect, useState } from "react";
 const items = [
   { href: "/", label: "Home", match: (p: string) => p === "/" },
   { href: "/guides", label: "Guides", match: (p: string) => p.startsWith("/guides") },
-  {
-    href: "/guides/do-i-need-a-permit-to-build-a-dock-in-tampa-bay",
-    label: "Costs & Permits",
-    match: (p: string) => p.startsWith("/guides/"),
-  },
-  { href: "/directory", label: "Find a Builder", match: (p: string) => p.startsWith("/directory") },
+  { href: "/tools", label: "Tools", match: (p: string) => p.startsWith("/tools") },
+  { href: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
 ];
 
 export function NavLinks() {

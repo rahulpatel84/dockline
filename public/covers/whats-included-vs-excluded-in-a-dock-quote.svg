@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="What&apos;s Actually Included vs Excluded in a Dock Quote">
+  
+    <rect width="1200" height="630" fill="#062a34" />
+    
+  <circle cx="200" cy="100" r="110" fill="#ff6a5b" fill-opacity="0.35" />
+  <circle cx="200" cy="100" r="77" fill="#ff6a5b" fill-opacity="0.55" />
+  <circle cx="200" cy="100" r="44" fill="#ff6a5b" fill-opacity="0.85" />
+    
+  <g fill="#faf5ec" fill-opacity="0.12">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.072">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- Long receipt scroll -->
+    <g transform="translate(340 40) rotate(-5)">
+      <!-- serrated top -->
+      <path d="M 0 0 L 20 -10 L 40 0 L 60 -10 L 80 0 L 100 -10 L 120 0 L 140 -10 L 160 0 L 180 -10 L 200 0 L 220 -10 L 240 0 L 260 -10 L 280 0 L 300 -10 L 320 0 L 340 -10 L 360 0 L 380 -10 L 400 0 L 420 -10 L 440 0 L 460 -10 L 480 0 L 500 -10 L 520 0" fill="#faf5ec" />
+      <rect x="0" y="0" width="520" height="560" fill="#faf5ec" />
+      <!-- serrated bottom -->
+      <path d="M 0 560 L 20 570 L 40 560 L 60 570 L 80 560 L 100 570 L 120 560 L 140 570 L 160 560 L 180 570 L 200 560 L 220 570 L 240 560 L 260 570 L 280 560 L 300 570 L 320 560 L 340 570 L 360 560 L 380 570 L 400 560 L 420 570 L 440 560 L 460 570 L 480 560 L 500 570 L 520 560" fill="#faf5ec" />
+
+      <!-- Receipt header -->
+      <text x="260" y="50" font-family="'Fraunces', serif" font-size="28" fill="#0c3b46" font-weight="900" text-anchor="middle">DOCK QUOTE</text>
+      <text x="260" y="72" font-family="'Hanken Grotesk', sans-serif" font-size="12" fill="#0c3b46" fill-opacity="0.6" text-anchor="middle" letter-spacing="3">TAMPA · 40 x 6 · COMPOSITE</text>
+      <line x1="30" y1="90" x2="490" y2="90" stroke="#0c3b46" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="4 4" />
+
+      <!-- Line items -->
+      
+            <g>
+              <text x="30" y="130" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Decking + framing</text>
+              <text x="490" y="130" font-family="'Fraunces', serif" font-size="22" fill="#0c3b46" font-weight="800" text-anchor="end">$8,200</text>
+              
+              <line x1="30" y1="142" x2="490" y2="142" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+            <g>
+              <text x="30" y="185" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Pilings (8x concrete)</text>
+              <text x="490" y="185" font-family="'Fraunces', serif" font-size="22" fill="#0c3b46" font-weight="800" text-anchor="end">$6,240</text>
+              
+              <line x1="30" y1="197" x2="490" y2="197" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+            <g>
+              <text x="30" y="240" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Labor + installation</text>
+              <text x="490" y="240" font-family="'Fraunces', serif" font-size="22" fill="#0c3b46" font-weight="800" text-anchor="end">$6,800</text>
+              
+              <line x1="30" y1="252" x2="490" y2="252" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+            <g>
+              <text x="30" y="295" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Boundary survey</text>
+              <text x="490" y="295" font-family="'Fraunces', serif" font-size="15" fill="#ff6a5b" font-weight="800" text-anchor="end">MISSING</text>
+              <rect x="380" y="275" width="130" height="26" fill="#ff6a5b" fill-opacity="0.15" rx="4" />
+              <line x1="30" y1="307" x2="490" y2="307" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+            <g>
+              <text x="30" y="350" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Permits (county+FDEP)</text>
+              <text x="490" y="350" font-family="'Fraunces', serif" font-size="15" fill="#ff6a5b" font-weight="800" text-anchor="end">MISSING</text>
+              <rect x="380" y="330" width="130" height="26" fill="#ff6a5b" fill-opacity="0.15" rx="4" />
+              <line x1="30" y1="362" x2="490" y2="362" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+            <g>
+              <text x="30" y="405" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Electrical run</text>
+              <text x="490" y="405" font-family="'Fraunces', serif" font-size="15" fill="#ff6a5b" font-weight="800" text-anchor="end">MISSING</text>
+              <rect x="380" y="385" width="130" height="26" fill="#ff6a5b" fill-opacity="0.15" rx="4" />
+              <line x1="30" y1="417" x2="490" y2="417" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+            <g>
+              <text x="30" y="460" font-family="'Hanken Grotesk', sans-serif" font-size="17" fill="#0c3b46" font-weight="600">Mobilization</text>
+              <text x="490" y="460" font-family="'Fraunces', serif" font-size="22" fill="#0c3b46" font-weight="800" text-anchor="end">$3,500</text>
+              
+              <line x1="30" y1="472" x2="490" y2="472" stroke="#0c3b46" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="2 3" />
+            </g>
+
+      <!-- Highlighter marks over MISSING items -->
+      <g fill="#ff6a5b" fill-opacity="0.35">
+        <rect x="20" y="235" width="500" height="30" rx="3" />
+        <rect x="20" y="290" width="500" height="30" rx="3" />
+        <rect x="20" y="345" width="500" height="30" rx="3" />
+      </g>
+
+      <!-- total -->
+      <text x="30" y="510" font-family="'Fraunces', serif" font-size="22" fill="#0c3b46" font-weight="900">Total shown</text>
+      <text x="490" y="510" font-family="'Fraunces', serif" font-size="30" fill="#0c3b46" font-weight="900" text-anchor="end">$24,740</text>
+      <text x="30" y="540" font-family="'Hanken Grotesk', sans-serif" font-size="14" fill="#ff6a5b" font-weight="700">+ $6,200 hidden</text>
+    </g>
+
+    <!-- Highlighter marker -->
+    <g transform="translate(880 340) rotate(-25)">
+      <rect x="0" y="0" width="180" height="30" rx="4" fill="#ff6a5b" />
+      <path d="M 180 0 L 220 15 L 180 30 Z" fill="#ff6a5b" />
+      <rect x="0" y="0" width="30" height="30" rx="4" fill="#0f1b1d" fill-opacity="0.6" />
+    </g>
+  <!-- discreet brand mark -->
+  <g transform="translate(1170 610)" opacity="0.7">
+    <text font-family="'Fraunces', serif" font-size="15" fill="#faf5ec" font-weight="700" text-anchor="end">MyDockGuide</text>
+  </g>
+</svg>

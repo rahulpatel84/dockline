@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Floating or Fixed? A Tampa Bay Guide">
+  
+    <rect width="1200" height="630" fill="#062a34" />
+    <ellipse cx="600" cy="60" rx="700" ry="100" fill="#0c3b46" fill-opacity="0.2" />
+
+    <!-- Water line -->
+    <rect x="0" y="360" width="1200" height="270" fill="#3ab7c9" fill-opacity="0.35" />
+    
+  <g fill="#faf5ec" fill-opacity="0.15">
+    <path d="M0 470 Q 150 445 300 470 T 600 470 T 900 470 T 1200 470 L 1200 630 L 0 630 Z" />
+  </g>
+  <g fill="#faf5ec" fill-opacity="0.09">
+    <path d="M0 490 Q 150 465 300 490 T 600 490 T 900 490 T 1200 490 L 1200 630 L 0 630 Z" />
+  </g>
+
+    <!-- Left: floating dock -->
+    <g>
+      <!-- floats -->
+      <g fill="#faf5ec" fill-opacity="0.9">
+        <rect x="80" y="340" width="80" height="40" rx="8" />
+        <rect x="200" y="340" width="80" height="40" rx="8" />
+        <rect x="320" y="340" width="80" height="40" rx="8" />
+      </g>
+      <!-- deck on floats -->
+      <rect x="60" y="310" width="360" height="35" fill="#faf5ec" />
+      <g stroke="#0f1b1d" stroke-opacity="0.25" stroke-width="1.5">
+        <line x1="120" y1="310" x2="120" y2="345" />
+        <line x1="180" y1="310" x2="180" y2="345" />
+        <line x1="240" y1="310" x2="240" y2="345" />
+        <line x1="300" y1="310" x2="300" y2="345" />
+        <line x1="360" y1="310" x2="360" y2="345" />
+      </g>
+      <!-- ramp to shore -->
+      <path d="M 60 310 L 20 260 L 20 285 L 60 335 Z" fill="#faf5ec" fill-opacity="0.7" />
+      <!-- label badge -->
+      <g transform="translate(180 240)">
+        <rect x="-70" y="0" width="140" height="34" rx="17" fill="#0c3b46" />
+        <text x="0" y="23" font-family="'Fraunces', serif" font-size="18" fill="#062a34" font-weight="800" text-anchor="middle">FLOATING</text>
+      </g>
+    </g>
+
+    <!-- Vertical divider -->
+    <line x1="600" y1="130" x2="600" y2="510" stroke="#faf5ec" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6" />
+    <g transform="translate(600 320)">
+      <circle r="40" fill="#062a34" stroke="#faf5ec" stroke-width="3" />
+      <text y="12" font-family="'Fraunces', serif" font-size="30" fill="#faf5ec" font-weight="900" text-anchor="middle">VS</text>
+    </g>
+
+    <!-- Right: fixed dock -->
+    <g>
+      <!-- deck -->
+      <rect x="700" y="285" width="440" height="30" fill="#faf5ec" />
+      <g stroke="#0f1b1d" stroke-opacity="0.25" stroke-width="1.5">
+        <line x1="760" y1="285" x2="760" y2="315" />
+        <line x1="820" y1="285" x2="820" y2="315" />
+        <line x1="880" y1="285" x2="880" y2="315" />
+        <line x1="940" y1="285" x2="940" y2="315" />
+        <line x1="1000" y1="285" x2="1000" y2="315" />
+        <line x1="1060" y1="285" x2="1060" y2="315" />
+      </g>
+      <!-- tall pilings -->
+      <rect x="740" y="315" width="14" height="220" fill="#0f1b1d" fill-opacity="0.7" />
+      <rect x="880" y="315" width="14" height="220" fill="#0f1b1d" fill-opacity="0.7" />
+      <rect x="1020" y="315" width="14" height="220" fill="#0f1b1d" fill-opacity="0.7" />
+      <rect x="1120" y="315" width="14" height="220" fill="#0f1b1d" fill-opacity="0.7" />
+      <!-- label badge -->
+      <g transform="translate(910 220)">
+        <rect x="-56" y="0" width="112" height="34" rx="17" fill="#faf5ec" />
+        <text x="0" y="23" font-family="'Fraunces', serif" font-size="18" fill="#062a34" font-weight="800" text-anchor="middle">FIXED</text>
+      </g>
+    </g>
+  <!-- discreet brand mark -->
+  <g transform="translate(1170 610)" opacity="0.7">
+    <text font-family="'Fraunces', serif" font-size="15" fill="#faf5ec" font-weight="700" text-anchor="end">MyDockGuide</text>
+  </g>
+</svg>

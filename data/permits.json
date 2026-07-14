@@ -1,0 +1,150 @@
+{
+  "counties": {
+    "hillsborough": {
+      "name": "Hillsborough County",
+      "buildingDept": {
+        "name": "Hillsborough County Building Services",
+        "url": "https://www.hillsboroughcounty.org/en/residents/property-owners-and-renters/permits",
+        "typicalWeeks": [4, 10]
+      },
+      "environmental": {
+        "name": "Hillsborough EPC (Environmental Protection Commission)",
+        "url": "https://epcbio.hillsboroughcounty.org/",
+        "typicalWeeks": [4, 12]
+      }
+    },
+    "pinellas": {
+      "name": "Pinellas County",
+      "buildingDept": {
+        "name": "Pinellas County Building & Development Review Services",
+        "url": "https://www.pinellascounty.org/build/",
+        "typicalWeeks": [5, 12]
+      },
+      "environmental": {
+        "name": "Pinellas County Water & Navigation",
+        "url": "https://www.pinellascounty.org/environment/",
+        "typicalWeeks": [6, 14]
+      }
+    },
+    "manatee": {
+      "name": "Manatee County",
+      "buildingDept": {
+        "name": "Manatee County Building & Development Services",
+        "url": "https://www.mymanatee.org/departments/building___development_services",
+        "typicalWeeks": [3, 8]
+      }
+    },
+    "sarasota": {
+      "name": "Sarasota County",
+      "buildingDept": {
+        "name": "Sarasota County Development Services",
+        "url": "https://www.scgov.net/government/development-services",
+        "typicalWeeks": [4, 10]
+      }
+    },
+    "pasco": {
+      "name": "Pasco County",
+      "buildingDept": {
+        "name": "Pasco County Building Construction Services",
+        "url": "https://www.pascocountyfl.net/",
+        "typicalWeeks": [3, 8]
+      }
+    }
+  },
+  "state": {
+    "fdep": {
+      "name": "Florida Department of Environmental Protection (FDEP)",
+      "url": "https://floridadep.gov/water/submerged-lands-environmental-resources-coordination",
+      "typicalWeeks": [6, 20],
+      "note": "Required for any structure over sovereign submerged lands. Small private single-family docks often qualify for exemptions."
+    }
+  },
+  "federal": {
+    "acoe": {
+      "name": "U.S. Army Corps of Engineers (Jacksonville District)",
+      "url": "https://www.saj.usace.army.mil/",
+      "typicalWeeks": [4, 24],
+      "note": "Federal review for structures in navigable waters. Nationwide permits speed things up dramatically vs. Individual permits."
+    }
+  },
+  "matrix": {
+    "new-dock": {
+      "label": "New dock construction",
+      "requires": {
+        "buildingDept": true,
+        "environmental": true,
+        "fdep": true,
+        "acoe": true
+      },
+      "notes": [
+        "Small private single-family docks often qualify for an FDEP exemption but still need county sign-off.",
+        "Docks over 500 sq ft or in seagrass beds trigger longer FDEP + ACOE review."
+      ]
+    },
+    "dock-repair": {
+      "label": "Dock repair / rebuild in-kind",
+      "requires": {
+        "buildingDept": true,
+        "environmental": false,
+        "fdep": false,
+        "acoe": false
+      },
+      "notes": [
+        "In-kind repair (same footprint, same materials) usually only needs a county permit.",
+        "Any expansion of footprint bumps you back to full new-dock permitting."
+      ]
+    },
+    "boat-lift": {
+      "label": "Boat lift installation",
+      "requires": {
+        "buildingDept": true,
+        "environmental": false,
+        "fdep": true,
+        "acoe": true
+      },
+      "notes": [
+        "Lifts require ACOE and FDEP review because they occupy submerged land.",
+        "Many builders bundle lift permits with dock permits — ask if yours does."
+      ]
+    },
+    "seawall-new": {
+      "label": "New seawall or full replacement",
+      "requires": {
+        "buildingDept": true,
+        "environmental": true,
+        "fdep": true,
+        "acoe": true
+      },
+      "notes": [
+        "Replacement in the same footprint is generally faster than a new install.",
+        "Seagrass mitigation and endangered species review can add 8–16 weeks."
+      ]
+    },
+    "seawall-cap": {
+      "label": "Seawall cap-only refresh",
+      "requires": {
+        "buildingDept": true,
+        "environmental": false,
+        "fdep": false,
+        "acoe": false
+      },
+      "notes": [
+        "Cap-only work usually only needs a county building permit.",
+        "If the wall panels are structurally compromised, you'll be told to do a full replacement instead."
+      ]
+    },
+    "storm-rebuild": {
+      "label": "Post-storm rebuild (declared disaster)",
+      "requires": {
+        "buildingDept": true,
+        "environmental": true,
+        "fdep": true,
+        "acoe": true
+      },
+      "notes": [
+        "Post-disaster expedited review exists in Florida — declare intent to rebuild within 90 days for the fastest track.",
+        "FEMA 50% rule applies: if repair cost exceeds 50% of the structure's pre-storm value, current code applies (BFE, wind, elevation)."
+      ]
+    }
+  }
+}

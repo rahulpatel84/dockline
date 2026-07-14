@@ -1,0 +1,65 @@
+{
+  "phases": [
+    {
+      "id": "pre-season",
+      "title": "Pre-season (June 1)",
+      "description": "Do these before the season starts so you're not scrambling when a storm forms.",
+      "items": [
+        { "id": "docs", "text": "Photograph every dock, seawall, and boat lift from 4 angles + close-ups of piling caps, decking, and lift straps." },
+        { "id": "insurance", "text": "Review your homeowners + flood + boat/lift insurance policies. Confirm dock coverage limit and separate deductibles." },
+        { "id": "elevation", "text": "Locate your elevation certificate. If you don't have one, get one — it directly affects insurance and rebuild rules." },
+        { "id": "cables", "text": "Inspect boat lift cables/straps. Anything frayed, corroded, or older than 5 years — replace before June." },
+        { "id": "cleat-check", "text": "Torque-check every cleat, ring, and tie-down. Replace corroded hardware with 316 stainless." },
+        { "id": "tree-trim", "text": "Trim overhanging branches away from dock and boat lift zones." },
+        { "id": "loose-hardware", "text": "Torque all bolt-through hardware — anything loose becomes a projectile in 100 mph winds." },
+        { "id": "storm-kit", "text": "Stock a labeled storm kit: extra straps, marine-grade line, pool noodles, waterproof labels, wire cutters, marine goop." },
+        { "id": "insurance-contact", "text": "Save your insurance claims phone number in your phone contacts — labeled 'HURRICANE CLAIMS'." },
+        { "id": "vendor-list", "text": "Save contact info for your dock builder, seawall contractor, boat lift service tech, and marine electrician." }
+      ]
+    },
+    {
+      "id": "72h",
+      "title": "72 hours out (storm named)",
+      "description": "Named storm in the Gulf/Atlantic. Time to make real decisions.",
+      "items": [
+        { "id": "check-forecast", "text": "Check the National Hurricane Center forecast — commit to a plan when the cone puts you in the 5-day window." },
+        { "id": "boat-decision", "text": "Boat decision: haul out, evacuate, or ride it out on the lift? For CAT 3+ tracks, haul out is almost always the right call." },
+        { "id": "fuel-drain", "text": "If the boat stays: drain fuel to 1/4 tank (lighter is safer if the lift fails)." },
+        { "id": "reserve-yard", "text": "If evacuating boat: reserve dry storage or a truck now — availability disappears at 48h." },
+        { "id": "loose-items", "text": "Start moving everything unbolted off the dock: chairs, ladders, cleats-on-ropes, hoses, floats." },
+        { "id": "cameras", "text": "Charge storm cameras / phones / power banks. Doorbell cams can capture surge for insurance." }
+      ]
+    },
+    {
+      "id": "24h",
+      "title": "24 hours out (warning issued)",
+      "description": "Hurricane warning in effect. Finish the checklist — you're out of time for major moves.",
+      "items": [
+        { "id": "raise-lift", "text": "Raise the boat lift to maximum height + strap the boat to the cradle at 4+ points." },
+        { "id": "cover-off", "text": "Remove canvas covers, bimini tops, and anything with wind area. Store inside." },
+        { "id": "hatch-close", "text": "Seal boat: close hatches, tape vents, lock cabin, tie down cushions." },
+        { "id": "shore-lines", "text": "Add double lines to any docked boat. Include spring lines and long lines for surge slack." },
+        { "id": "storm-plug", "text": "Storm plug: pull the drain plug so surge water can drain out instead of filling the hull." },
+        { "id": "battery-off", "text": "Kill battery switches on the boat. Disconnect trickle chargers." },
+        { "id": "dock-strap", "text": "Strap loose deck boards down if you're pre-2020 wood construction — modern construction shouldn't need this." },
+        { "id": "photo-final", "text": "Final pre-storm photos of the entire dock/lift/seawall. Timestamp is everything for insurance." },
+        { "id": "evacuate", "text": "Follow your evacuation zone order. No dock is worth staying for a Cat 3+." }
+      ]
+    },
+    {
+      "id": "post-storm",
+      "title": "After the all-clear",
+      "description": "Do these in order. Don't skip step 1.",
+      "items": [
+        { "id": "safety-first", "text": "STOP: don't step on the dock until you've inspected pilings from land. A partially failed dock can collapse under weight." },
+        { "id": "electrical-off", "text": "Do not touch dock electrical panels until a marine electrician has verified them dry and safe." },
+        { "id": "photo-damage", "text": "Photograph EVERYTHING before you touch anything. Wide shots + close-ups + serial numbers of damaged equipment." },
+        { "id": "insurance-claim", "text": "File your insurance claim within 48 hours — don't wait for adjusters to be available." },
+        { "id": "contractor-scam", "text": "Beware storm-chasing contractors going door-to-door. Only work with licensed FL contractors verifiable at MyFloridaLicense.com." },
+        { "id": "structural", "text": "Get a structural assessment before any repair. A dock that 'looks fine' can be shifted or cracked at the pilings." },
+        { "id": "50-percent-rule", "text": "If repair cost exceeds 50% of pre-storm value, you'll be required to rebuild to current code (BFE, wind, elevation). Understand this before signing anything." },
+        { "id": "temporary-repair", "text": "Do only the temporary repairs needed to prevent further damage. Don't do 'quick' permanent work — you may lose insurance coverage." }
+      ]
+    }
+  ]
+}
