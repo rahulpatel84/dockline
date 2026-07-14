@@ -107,11 +107,11 @@ export function Footer() {
           </span>
           <span className="foot-legal">
             <Link href="/privacy">Privacy</Link>
-            <span aria-hidden="true"> · </span>
+            <span aria-hidden="true">·</span>
             <Link href="/terms">Terms</Link>
-            <span aria-hidden="true"> · </span>
+            <span aria-hidden="true">·</span>
             <Link href="/builder-agreement">Builder agreement</Link>
-            <span aria-hidden="true"> · </span>
+            <span aria-hidden="true">·</span>
             <Link href="/sitemap-page">Sitemap</Link>
           </span>
         </div>

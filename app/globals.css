@@ -998,5 +998,7 @@ footer .blurb{font-size:.9rem;color:#9fc3c4;max-width:280px;}
 }
 
 /* ─── Footer legal links (already-linked version) ─── */
-.foot-legal a{color:inherit;transition:.2s;}
+.foot-legal{display:inline-flex;flex-wrap:wrap;gap:6px 10px;align-items:center;}
+.foot-legal a{display:inline;color:inherit;margin:0;transition:.2s;}
 .foot-legal a:hover{color:var(--aqua);}
+.foot-legal > span[aria-hidden="true"]{color:#5a838a;user-select:none;}
