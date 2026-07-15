@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { breadcrumbSchema, webPageSchema } from "@/lib/jsonld";
 
 const description =
@@ -55,15 +56,8 @@ export default function NewsletterPage() {
             <p style={{ color: "var(--ink-soft)", marginBottom: 20 }}>
               Free forever. One click to unsubscribe. We never share your address.
             </p>
-            <form action="/api/newsletter" method="post" className="newsletter-form">
-              <label htmlFor="nl-name" className="sr-only">First name</label>
-              <input id="nl-name" name="name" placeholder="First name" className="field" required />
-              <label htmlFor="nl-email" className="sr-only">Email</label>
-              <input id="nl-email" name="email" type="email" placeholder="you@email.com" className="field" required />
-              <button type="submit" className="btn btn-coral" style={{ width: "100%", justifyContent: "center" }}>
-                Send me Thursday&apos;s issue →
-              </button>
-            </form>
+            <NewsletterSignup />
+
           </div>
 
           <div className="newsletter-inclusions">
