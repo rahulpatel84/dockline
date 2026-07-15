@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 
 type Block =
   | { type: "p"; html: string }
@@ -6,7 +7,7 @@ type Block =
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "keyfact"; html: string }
-  | { type: "cta-soft"; heading: string; body: string; withEmail?: boolean; ctaText: string }
+  | { type: "cta-soft"; heading: string; body: string; withEmail?: boolean; ctaText: string; pdfPath?: string; pdfLabel?: string; successHeadline?: string }
   | { type: "cta"; heading: string; body: string; ctaText: string; ctaHref: string }
   | { type: "disclaimer"; text: string };
 
@@ -37,12 +38,14 @@ export function ArticleBody({ blocks }: { blocks: Block[] }) {
                 <h4>{b.heading}</h4>
                 <p>{b.body}</p>
                 {b.withEmail && (
-                  <form className="mini-form" style={{ maxWidth: 420 }} action="/api/lead" method="post">
-                    <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
-                    <button className="btn btn-coral" type="submit">
-                      {b.ctaText}
-                    </button>
-                  </form>
+                  <LeadCaptureForm
+                    source={`article-cta:${b.heading}`}
+                    ctaText={b.ctaText}
+                    maxWidth={420}
+                    successHeadline={b.successHeadline ?? "Sent — kit opening in a new tab."}
+                    pdfPath={b.pdfPath}
+                    pdfLabel={b.pdfLabel}
+                  />
                 )}
               </div>
             );

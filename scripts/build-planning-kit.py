@@ -122,16 +122,16 @@ def draw_section_header(c: canvas.Canvas, kicker: str, title: str, y: float) -> 
     c.setFont(SANS_B, 9)
     c.setFillColor(TEAL)
     c.drawString(0.75 * inch, y, kicker.upper())
-    y -= 20
+    y -= 32
     c.setFont(SERIF, 26)
     c.setFillColor(OCEAN)
     c.drawString(0.75 * inch, y, title)
-    y -= 8
+    y -= 10
     # Coral underline
     c.setStrokeColor(CORAL)
     c.setLineWidth(2.2)
     c.line(0.75 * inch, y, 0.75 * inch + 42, y)
-    y -= 18
+    y -= 22
     return y
 
 
@@ -476,12 +476,12 @@ def draw_project_card(c: canvas.Canvas, project: dict, x: float, y: float, w: fl
 
 
 def permit_pages(c: canvas.Canvas, start_page: int) -> int:
+    """Render permit checklist across three pages, 2 cards per page."""
     page_num = start_page
 
     def new_page(header: str):
         c.setFillColor(SAND)
         c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
-        # Top ocean strip
         c.setFillColor(OCEAN)
         c.rect(0, PAGE_H - 0.9 * inch, PAGE_W, 0.9 * inch, stroke=0, fill=1)
         draw_logo(c, 0.75 * inch, PAGE_H - 0.35 * inch, dark_bg=True)
@@ -489,33 +489,29 @@ def permit_pages(c: canvas.Canvas, start_page: int) -> int:
         c.setFont(SANS_B, 9)
         c.drawRightString(PAGE_W - 0.75 * inch, PAGE_H - 0.5 * inch, header)
 
-    # Page 3
-    new_page("SECTION 01 · PERMITS")
-    y = PAGE_H - 1.7 * inch
-    y = draw_section_header(c, "Section 01", "Permit Checklist by Project", y)
-    c.setFont(SANS, 10.5)
-    c.setFillColor(INK_SOFT)
-    intro = "Six common Tampa Bay projects and the agencies that touch each one. Print this and check off each one as you get approvals in."
-    for line in wrap_text(c, intro, SANS, 10.5, PAGE_W - 1.5 * inch):
-        c.drawString(0.75 * inch, y, line)
-        y -= 14
-    y -= 10
+    # Two cards per page, 3 pages total (6 project types)
+    for idx in range(0, len(PERMIT_PROJECTS), 2):
+        new_page("SECTION 01 · PERMITS")
+        y = PAGE_H - 1.7 * inch
 
-    # Three cards on page 3
-    for project in PERMIT_PROJECTS[:3]:
-        y = draw_project_card(c, project, 0.75 * inch, y, PAGE_W - 1.5 * inch)
-    draw_page_footer(c, page_num)
-    c.showPage()
-    page_num += 1
+        if idx == 0:
+            y = draw_section_header(c, "Section 01", "Permit Checklist by Project", y)
+            c.setFont(SANS, 10.5)
+            c.setFillColor(INK_SOFT)
+            intro = "Six common Tampa Bay projects and the agencies that touch each one. Print this and check off each approval as it lands."
+            for line in wrap_text(c, intro, SANS, 10.5, PAGE_W - 1.5 * inch):
+                c.drawString(0.75 * inch, y, line)
+                y -= 14
+            y -= 12
+        else:
+            y = draw_section_header(c, "Section 01 · continued", "Permit Checklist by Project", y)
 
-    # Page 4
-    new_page("SECTION 01 · PERMITS")
-    y = PAGE_H - 1.5 * inch
-    for project in PERMIT_PROJECTS[3:]:
-        y = draw_project_card(c, project, 0.75 * inch, y, PAGE_W - 1.5 * inch)
-    draw_page_footer(c, page_num)
-    c.showPage()
-    page_num += 1
+        for project in PERMIT_PROJECTS[idx : idx + 2]:
+            y = draw_project_card(c, project, 0.75 * inch, y, PAGE_W - 1.5 * inch)
+
+        draw_page_footer(c, page_num)
+        c.showPage()
+        page_num += 1
 
     return page_num
 
@@ -814,55 +810,74 @@ def final_page(c: canvas.Canvas, page_num: int) -> None:
             c.drawString(1.15 * inch, y - i * 13, line)
         y -= 13 * len(lines) + 8
 
-    y -= 12
+    y -= 18
 
-    # Big CTA panel
-    cta_h = 1.9 * inch
+    # Big CTA panel — compute height from actual content
+    cta_body = "Fill out one form. We match you with two or three licensed Tampa Bay builders. No spam, no auto-dialers, no fees to you — ever."
+    body_lines = wrap_text(c, cta_body, SANS, 11, PAGE_W - 2.0 * inch)
+
+    pad_top = 26
+    kicker_h = 12
+    title_h = 32
+    body_h = 14 * len(body_lines)
+    gap = 18
+    btn_h = 40
+    pad_bot = 26
+    cta_h = pad_top + kicker_h + title_h + body_h + gap + btn_h + pad_bot
+
+    panel_x = 0.75 * inch
+    panel_w = PAGE_W - 1.5 * inch
+    panel_top = y
+    panel_bot = y - cta_h
+
     c.setFillColor(OCEAN)
-    c.roundRect(0.75 * inch, y - cta_h, PAGE_W - 1.5 * inch, cta_h, 16, stroke=0, fill=1)
+    c.roundRect(panel_x, panel_bot, panel_w, cta_h, 16, stroke=0, fill=1)
 
-    # Aqua dots decoration
+    # Aqua dot cluster (decorative, upper-right)
     c.setFillColor(AQUA)
-    for (dx, dy, r) in [(0, 0, 5), (14, 6, 3.5), (26, -3, 4)]:
-        c.circle(PAGE_W - 1.15 * inch + dx, y - 24 + dy, r, stroke=0, fill=1)
+    for (dx, dy, r) in [(0, 0, 5), (14, 6, 3.5), (26, -3, 4), (10, 18, 3)]:
+        c.circle(panel_x + panel_w - 40 + dx, panel_top - 30 + dy, r, stroke=0, fill=1)
 
+    # Kicker
+    cursor_y = panel_top - pad_top
     c.setFont(SANS_B, 9)
     c.setFillColor(AQUA)
-    c.drawString(0.95 * inch, y - 26, "SECTION 05 · NEXT STEPS")
+    c.drawString(panel_x + 22, cursor_y, "SECTION 05 · NEXT STEPS")
+    cursor_y -= kicker_h + 6
 
-    c.setFont(SERIF, 22)
+    # Title
+    c.setFont(SERIF, 24)
     c.setFillColor(WHITE)
-    c.drawString(0.95 * inch, y - 54, "Ready to get real quotes?")
+    c.drawString(panel_x + 22, cursor_y - 8, "Ready to get real quotes?")
+    cursor_y -= title_h
 
+    # Body
     c.setFont(SANS, 11)
     c.setFillColor(HexColor("#cfe3e3"))
-    cta_body = "Fill out one form. We match you with 2–3 licensed Tampa Bay builders. No spam, no auto-dialers, no fees."
-    line_y = y - 76
-    for line in wrap_text(c, cta_body, SANS, 11, PAGE_W - 2.0 * inch):
-        c.drawString(0.95 * inch, line_y, line)
-        line_y -= 14
+    for line in body_lines:
+        c.drawString(panel_x + 22, cursor_y, line)
+        cursor_y -= 14
+    cursor_y -= gap - 14
 
-    # Coral button
-    btn_w = 200
-    btn_h = 36
-    btn_x = 0.95 * inch
-    btn_y = y - cta_h + 22
+    # Coral button (clickable)
+    btn_w = 210
+    btn_x = panel_x + 22
+    btn_y = cursor_y - btn_h
     c.setFillColor(CORAL)
-    c.roundRect(btn_x, btn_y, btn_w, btn_h, 18, stroke=0, fill=1)
-    c.setFont(SANS_B, 11)
+    c.roundRect(btn_x, btn_y, btn_w, btn_h, 20, stroke=0, fill=1)
+    c.setFont(SANS_B, 12)
     c.setFillColor(WHITE)
-    c.drawCentredString(btn_x + btn_w / 2, btn_y + 13, "Get matched  →")
-    # Make it a clickable link
+    c.drawCentredString(btn_x + btn_w / 2, btn_y + 15, "Get matched  →")
     c.linkURL(
         "https://mydockguide.com/quote",
         (btn_x, btn_y, btn_x + btn_w, btn_y + btn_h),
         relative=0,
     )
 
-    # URL text on right
+    # URL text on right, vertically aligned with button
     c.setFont(SANS, 10)
     c.setFillColor(AQUA)
-    c.drawRightString(PAGE_W - 0.95 * inch, btn_y + 13, "mydockguide.com/quote")
+    c.drawRightString(panel_x + panel_w - 22, btn_y + 15, "mydockguide.com/quote")
 
     draw_page_footer(c, page_num)
 

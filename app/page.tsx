@@ -4,6 +4,7 @@ import posts from "@/data/posts.json";
 import categories from "@/data/categories.json";
 import site from "@/data/site.json";
 import { PostCard } from "@/components/PostCard";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, itemListSchema, webPageSchema } from "@/lib/jsonld";
 
@@ -84,12 +85,7 @@ export default function HomePage() {
             <aside className="hero-card">
               <h4>Free Tampa Dock Planning Kit</h4>
               <p>Permit checklist + cost worksheet + 12 questions to ask any builder. Sent instantly.</p>
-              <form className="mini-form" action="/api/lead" method="post">
-                <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
-                <button className="btn btn-coral" type="submit">
-                  Send it
-                </button>
-              </form>
+              <LeadCaptureForm source="home-hero" ctaText="Send it" successHeadline="Sent — your kit is on the way." />
               <div className="trustline">🔒 No spam. Just the waterfront essentials.</div>
             </aside>
           </div>
@@ -227,15 +223,13 @@ export default function HomePage() {
                 ones. Used by 1,000+ Tampa Bay homeowners.
               </p>
             </div>
-            <form className="form-card" action="/api/lead" method="post">
-              <label htmlFor="lm-name">First name</label>
-              <input id="lm-name" name="name" className="field" placeholder="Jordan" required />
-              <label htmlFor="lm-email">Email</label>
-              <input id="lm-email" name="email" type="email" className="field" placeholder="you@email.com" required />
-              <button className="btn btn-coral" type="submit" style={{ width: "100%", justifyContent: "center" }}>
-                Email me the kit →
-              </button>
-            </form>
+            <LeadCaptureForm
+              source="home-magnet"
+              variant="stacked"
+              ctaText="Email me the kit →"
+              successHeadline="Sent — your kit is on the way."
+            />
+
           </div>
         </div>
       </section>
